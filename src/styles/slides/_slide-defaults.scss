@@ -1,0 +1,160 @@
+.singleElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.background-image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 720px;
+  height: 450px;
+}
+
+.background-image-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 720px;
+  height: 450px;
+}
+
+@keyframes kenburns {
+  50% {
+    transform: scale3d(1.6, 1.6, 1.6) translate3d(-60px, -50px, 0px);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: scale3d(1, 1, 1) translate3d(0px, 0px, 0px);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.background-image-kenburns {
+  animation: kenburns 90s infinite;
+  zoom: 120%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: transparent;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 720px;
+  height: 450px;
+}
+
+.background-image-inline {
+  width: 100%;
+}
+
+p.presenter-notes {
+  display: none;
+}
+
+.deckContainer {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.section {
+  display: flex;
+  z-index: 10;
+  overflow: hidden;
+  position: absolute;
+}
+
+.section h1.fit {
+  font-size: 20px;
+  white-space: nowrap;
+  display: none;
+  margin-top: 0;
+}
+
+.section h1, .section h2, .section h3, .section h4, .section h5, .section h6 {
+  margin: 0;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+}
+
+.frame > div {
+  padding: 25px;
+}
+
+.slideContainer {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+
+code {
+  font-family: 'Inconsolata';
+}
+
+pre {
+  font-family: 'Inconsolata';
+  padding: 10px;
+}
+
+.present-notes {
+  width: 100%;
+}
+
+.present-notes p,
+.present-notes h1,
+.present-notes h2,
+.present-notes h3,
+.present-notes h4,
+.present-notes h5,
+.present-notes h6,
+.present-notes ul,
+.present-notes ol,
+.present-notes .background-image,
+.present-notes pre {
+  display: none !important;
+}
+
+.present-notes p.presenter-notes {
+  display: block !important;
+  font-size: 50px;
+}
+
+.present-notes h1 {
+  display: none;
+}
+
+/* disable highlighting/selecting for a more native app feel */
+:not(input):not(textarea),
+:not(input):not(textarea)::after,
+:not(input):not(textarea)::before {
+      -webkit-user-select: none;
+          user-select: none;
+
+}
+input, button, textarea, :focus {
+  outline: none;
+}
+
+.CodeMirror {
+  min-height: 300px;
+}
+

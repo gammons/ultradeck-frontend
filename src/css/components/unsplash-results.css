@@ -1,0 +1,33 @@
+.unsplash-results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-height: 500px;
+  overflow-y: scroll; }
+  .unsplash-results li {
+    margin: 10px;
+    position: relative; }
+    .unsplash-results li .background-box {
+      background-size: cover;
+      border-radius: 10px;
+      display: block;
+      overflow: hidden;
+      height: 175px;
+      width: 175px;
+      position: relative; }
+    .unsplash-results li a.image-attribution {
+      position: absolute;
+      padding: 5px 0;
+      color: #ddd;
+      background-color: rgba(55, 55, 55, 0.7);
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center; }
+
+.unsplash-pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .unsplash-pagination a {
+    margin-right: 10px; }

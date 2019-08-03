@@ -1,0 +1,11 @@
+.free-trial-banner {
+  background-color: #6b64f6;
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px; }
+  .free-trial-banner a {
+    margin-left: 10px; }

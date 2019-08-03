@@ -1,0 +1,155 @@
+.nav {
+
+  > li {
+    height: 66px;
+
+    > a {
+      height: 100%;
+    }
+  }
+
+  .btn.create-new-deck {
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+
+  .help-support {
+    color: $color2;
+    font-size: 14px;
+    margin-right: 50px;
+    padding-top: 12px;
+    cursor: pointer;
+
+    span {
+      display: inline-block;
+      margin-top: 5px;
+      margin-left: 5px;
+      vertical-align: top;
+    }
+
+    i {
+      cursor: pointer;
+      color: $purple-highlight;
+      font-size: 30px;
+    }
+  }
+}
+
+.nav > li > a:hover {
+  background-color: inherit !important;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: inherit !important;
+}
+
+.navbar-nav > li > a:before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  height: 5px;
+  bottom: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  left: 0;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar-nav > li > a:hover:before, .navbar-nav > li.active > a:before, .navbar-nav > li > a.active:before {
+  transform: scaleX(1);
+  left: 10%;
+  bottom: 0px;
+  background: $highlight-color;
+  visibility: visible;
+}
+
+.navbar {
+  background-color: $bg-color1;
+  height: 80px;
+  border-radius: 0 !important;
+  font-family: "cabin";
+  margin-bottom: 0 !important;
+  box-shadow: 0 4px 10px -2px #111;
+  z-index: 100;
+}
+
+ul.nav > li > a {
+  color: $color1;
+}
+
+.navbar-header {
+  border-right: 1px solid black;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar-brand {
+  font-weight: normal;
+  font-size: 35px !important;
+  margin-top: 13px;
+}
+
+.navbar-login-info {
+  font-size: 20px;
+  padding-top: 7px;
+}
+
+.navbar-nav {
+  margin-top: 13px !important;
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+.navbar-avatar {
+  width: 40px;
+  border-radius: 100%;
+  float: right;
+  padding-top: 2px;
+  margin-left: -5px;
+}
+
+.navbar-username {
+  color: $color2;
+  font-size: 20px;
+  display: block;
+}
+
+.navbar-username i {
+  margin-right: 7px;
+  font-size: 20px;
+}
+
+#help-popover {
+  background: $highlight-color;
+  padding: 5px;
+
+  max-width: 350px;
+
+  li {
+    color: $slightly-muted-color;
+
+    &:last-child {
+      margin-top: 30px;
+    }
+
+    img {
+      float:  left;
+      width: 25px;
+    }
+  }
+
+  .description {
+    margin-left: 40px;
+  }
+
+  .arrow {
+    background: $highlight-color;
+  }
+
+  .arrow:after {
+    border-bottom-color: #6879f5;
+  }
+}

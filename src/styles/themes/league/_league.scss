@@ -1,0 +1,86 @@
+/* League */
+
+@font-face {
+  font-family: "LeagueGothic";
+  src: url('./fonts/LeagueGothic-Regular.otf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "LeagueGothicItalic";
+  src: url('./fonts/LeagueGothic-Italic.otf');
+  font-weight: 200;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
+
+
+$primary-font: 'LeagueGothic';
+$secondary-font: 'Just Another Hand';
+
+.league {
+  @import '../themes-global';
+
+  font-family: $primary-font;
+
+  h1,h2,h3,h4,a,p {
+    font-family: $primary-font;
+  }
+
+  em {
+    font-family: $secondary-font;
+  }
+
+  h1 {
+    font-size: 68px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 88px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 70px;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    font-size: 38px;
+    text-transform: uppercase;
+  }
+
+  section ol {
+    list-style-type: decimal;
+  }
+
+  section ul {
+    list-style-type: disc;
+  }
+
+  section li {
+    font-size: 38px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+  }
+
+  section p {
+    font-size: 38px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  section strong {
+    font-weight: bold;
+  }
+
+  .layout-picture-frame {
+    h2 {
+      font-size: 30px !important;
+      font-family: $secondary-font;
+    }
+  }
+}

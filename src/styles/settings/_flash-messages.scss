@@ -1,0 +1,11 @@
+.flash-messages {
+  position: fixed;
+  top: 8%;
+  z-index: 1000;
+  width: 80%;
+  left: 10%;
+
+  a {
+    color: $dark-color;
+  }
+}

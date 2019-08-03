@@ -1,0 +1,56 @@
+.slide-outer {
+  position: relative;
+  visibility: hidden;
+  display: none;
+  transform-style: preserve-3d;
+  transition: transform-origin 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+  transform 400ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+  visibility 400ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+}
+
+.slide-outer.past {
+  visibility: hidden;
+}
+
+.slide-outer.future {
+  visibility: hidden;
+}
+
+// .slide-outer.transition-slide-effect.past {
+//   transform: translate(-100%, 0);
+// }
+//
+// .slide-outer.transition-slide-effect.future {
+//   transform: translate(100%, 0);
+// }
+//
+// .slide-outer.transition-convex-effect.past {
+//   transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0);
+// }
+//
+// .slide-outer.transition-convex-effect.future {
+//   transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
+// }
+//
+// .slide-outer.transition-concave-effect.past {
+//   transform: translate3d(0, -300px, 0) rotateX(70deg) translate3d(0, -300px, 0);
+// }
+//
+// .slide-outer.transition-concave-effect.future {
+//   transform: translate3d(0, 300px, 0) rotateX(-70deg) translate3d(0, 300px, 0);
+// }
+//
+//
+// .slide-outer.transition-zoom-effect.past {
+//   transform: scale(16);
+// }
+//
+// .slide-outer.transition-zoom-effect.future {
+//   transform: scale(0.2);
+// }
+//
+
+.slide-outer.current {
+  visibility: visible;
+  display: block; // uncomment this to enable transitions
+}

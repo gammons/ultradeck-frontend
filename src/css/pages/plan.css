@@ -1,0 +1,157 @@
+.justify-content-md-center {
+  display: flex;
+  justify-content: center; }
+
+.pricing {
+  background-image: url("/images/hero-logo-background.png");
+  background-repeat: repeat;
+  background-color: #6b64f6;
+  padding-bottom: 260px; }
+  .pricing .hero {
+    padding-top: 20px; }
+    .pricing .hero h1 {
+      text-align: center; }
+    .pricing .hero h2 {
+      padding-bottom: 30px;
+      font-weight: normal;
+      text-align: center; }
+  .pricing .annual-payment-toggle-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #726bf5;
+    text-align: center;
+    border-radius: 80px; }
+    .pricing .annual-payment-toggle-container h4 {
+      color: #373737; }
+    .pricing .annual-payment-toggle-container .payment-toggle {
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .pricing .annual-payment-toggle-container .payment-toggle span {
+        font-size: 18px;
+        padding-left: 20px;
+        padding-right: 20px; }
+    .pricing .annual-payment-toggle-container .toggle {
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Rounded sliders */ }
+      .pricing .annual-payment-toggle-container .toggle span {
+        font-size: 18px;
+        padding-left: 20px;
+        padding-right: 20px; }
+      .pricing .annual-payment-toggle-container .toggle .switch {
+        margin-top: 10px;
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px; }
+        .pricing .annual-payment-toggle-container .toggle .switch input {
+          display: none; }
+        .pricing .annual-payment-toggle-container .toggle .switch .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #9994f9;
+          -webkit-transition: .2s;
+          transition: .2s; }
+        .pricing .annual-payment-toggle-container .toggle .switch .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: #fefeff;
+          -webkit-transition: .2s;
+          transition: .2s; }
+      .pricing .annual-payment-toggle-container .toggle input:checked + .slider {
+        background-color: #42b689; }
+      .pricing .annual-payment-toggle-container .toggle input:focus + .slider {
+        box-shadow: 0 0 1px #42b689; }
+      .pricing .annual-payment-toggle-container .toggle input:checked + .slider:before {
+        transform: translateX(26px); }
+      .pricing .annual-payment-toggle-container .toggle .slider.round {
+        border-radius: 4px; }
+      .pricing .annual-payment-toggle-container .toggle .slider.round:before {
+        border-radius: 4px; }
+
+.plans {
+  margin-top: -250px;
+  padding-bottom: 80px; }
+  .plans .payment-plans {
+    padding-top: 50px; }
+    .plans .payment-plans .price-container {
+      background-color: white;
+      border-radius: 10px; }
+      .plans .payment-plans .price-container .header {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        background-color: #202741;
+        text-align: center;
+        padding: 20px 0; }
+        .plans .payment-plans .price-container .header .for {
+          font-size: 20px;
+          margin-left: 5px;
+          margin-right: 5px;
+          font-weight: normal; }
+      .plans .payment-plans .price-container .price-details {
+        background-color: white;
+        padding-top: 40px;
+        padding-bottom: 40px; }
+        .plans .payment-plans .price-container .price-details .price {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .plans .payment-plans .price-container .price-details .price .dollar {
+            font-size: 30px;
+            color: #6c63f7; }
+          .plans .payment-plans .price-container .price-details .price h1 {
+            font-size: 108px;
+            color: #6c63f7;
+            text-align: center;
+            display: inline-block; }
+        .plans .payment-plans .price-container .price-details .per-month {
+          margin-top: -23px;
+          text-align: center;
+          color: #777; }
+      .plans .payment-plans .price-container ul {
+        width: 100%;
+        padding: 0; }
+        .plans .payment-plans .price-container ul li {
+          color: #777;
+          font-size: 18px;
+          background-color: white;
+          list-style-type: none;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 15px;
+          padding-bottom: 15px; }
+        .plans .payment-plans .price-container ul li:before {
+          content: "- "; }
+        .plans .payment-plans .price-container ul li:nth-child(odd) {
+          background-color: #ECEBFD; }
+      .plans .payment-plans .price-container .button-holder {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px; }
+        .plans .payment-plans .price-container .button-holder button {
+          width: 80%; }
+      .plans .payment-plans .price-container i {
+        display: block;
+        color: #373737;
+        text-align: center;
+        padding-bottom: 20px; }
+
+.stripe-form {
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 50px; }
+  .stripe-form button {
+    float: right; }

@@ -1,0 +1,70 @@
+/* Ostrich */
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i');
+
+$primary-font: 'IBM Plex Serif';
+$secondary-font: 'Kalam';
+
+.ostrich {
+  @import '../themes-global';
+
+  font-family: $primary-font;
+
+  h1,h2,h3,h4,a,p {
+    font-family: $primary-font;
+  }
+
+  h1 {
+    font-size: 88px;
+  }
+
+  h2 {
+    font-size: 98px;
+  }
+
+  h3 {
+    font-size: 70px;
+  }
+
+  h4 {
+    font-size: 48px;
+  }
+
+  section ol {
+    list-style-type: decimal;
+  }
+
+  section ul {
+    list-style-type: disc;
+  }
+
+  section li {
+    font-size: 38px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 23px;
+  }
+
+  section p {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  section strong {
+    font-weight: bold
+  }
+
+  section em {
+    font-style: italic;
+  }
+
+  .layout-picture-frame {
+    h2 {
+      font-size: 25px !important;
+      letter-spacing: -1.5px;
+      font-family: $secondary-font;
+    }
+  }
+}

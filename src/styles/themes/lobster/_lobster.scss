@@ -1,0 +1,69 @@
+/* Lobster */
+@import url('https://fonts.googleapis.com/css?family=Farsan|Raleway:400,700');
+
+$primary-font: 'Raleway';
+$secondary-font: 'Farsan';
+
+.lobster {
+  @import '../themes-global';
+
+  font-family: $primary-font;
+
+  h1,h2,h3,h4,a,p {
+    font-family: $primary-font;
+  }
+
+  em {
+    font-family: $secondary-font;
+  }
+
+  h1 {
+    font-size: 68px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 80px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 64px;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    font-size: 38px;
+    text-transform: uppercase;
+  }
+
+  section ol {
+    list-style-type: decimal;
+  }
+
+  section ul {
+    list-style-type: disc;
+  }
+
+  section li {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+  }
+
+  section p {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .layout-picture-frame {
+    h2 {
+      font-size: 25px !important;
+      letter-spacing: -1.5px;
+      font-family: $secondary-font;
+    }
+  }
+}

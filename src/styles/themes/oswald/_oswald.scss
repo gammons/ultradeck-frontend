@@ -1,0 +1,85 @@
+/* Oswald */
+@import url('https://fonts.googleapis.com/css?family=Neucha|Oswald');
+
+$primary-font: 'Oswald';
+$secondary-font: 'Neucha';
+
+.oswald {
+  @import '../themes-global';
+
+  font-family: $primary-font;
+
+  h1,h2,h3,h4,a,em {
+    font-family: $primary-font;
+  }
+
+  em {
+    font-family: $secondary-font;
+  }
+
+  h1 em {
+    font-size: 68px;
+  }
+
+  h1.fit em {
+    font-size: inherit;
+  }
+
+  h1 {
+    font-size: 68px;
+  }
+
+  h2 {
+    font-size: 88px;
+  }
+
+  h2 em {
+    font-size: 88px;
+  }
+
+  h3 {
+    font-size: 70px;
+  }
+
+  h3 em {
+    font-size: 48px;
+  }
+
+  h4 {
+    font-size: 38px;
+  }
+
+  h4 em {
+    font-size: 38px;
+  }
+
+  section ol {
+    list-style-type: decimal;
+  }
+
+  section ul {
+    list-style-type: disc;
+  }
+
+  section li {
+    font-size: 33px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+  }
+
+  section p {
+    font-size: 33px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .layout-picture-frame {
+    h2 {
+      font-size: 25px !important;
+      font-family: $secondary-font;
+    }
+  }
+}
+

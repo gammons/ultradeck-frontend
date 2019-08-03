@@ -1,0 +1,77 @@
+html, body {
+  font-family: 'cabin';
+  letter-spacing: 0.9px;
+  width: 100%;
+  background-color: $bg-color1;
+  color: $color1;
+}
+
+html.embed {
+  background-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'cabin';
+  color: $color1;
+}
+
+a {
+  font-family: 'cabin';
+  text-decoration: none;
+  color: $link-light-color;
+}
+
+a:hover {
+  text-decoration: none !important;
+  cursor: pointer;
+  color: $link-light-hover-color;
+}
+
+.modal-body a, .dropdown-menu a {
+  color: #383C36;
+}
+
+button:hover {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.btn-ultradeck {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  background-size: 101% !important;
+  color: $color1;
+  height: 45px;
+  border-radius: 2px;
+
+  &:focus, &:hover {
+    color: $color1;
+  }
+}
+
+.btn-purple {
+  background: $highlight-color;
+
+  &:focus, &:active {
+    background: $highlight-color-darkened;
+  }
+}
+
+.btn-green {
+  background-color: $green-success-color;
+}
+
+.btn-red {
+  background: $red-danger-gradient;
+}
+
+.logo {
+  opacity: 0.05;
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+

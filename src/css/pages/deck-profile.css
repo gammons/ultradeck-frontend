@@ -1,0 +1,79 @@
+.deck-profile .deck-viewer-container {
+  background-color: #1e263d; }
+  .deck-profile .deck-viewer-container .deck-viewer {
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+    margin-left: 10%;
+    margin-right: 10%; }
+    @media (max-width: 768px) {
+      .deck-profile .deck-viewer-container .deck-viewer {
+        margin-left: 0;
+        margin-right: 0; } }
+    .deck-profile .deck-viewer-container .deck-viewer > div > h1 {
+      color: #fafafa;
+      font-size: 30px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center; }
+    .deck-profile .deck-viewer-container .deck-viewer section {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px; }
+    .deck-profile .deck-viewer-container .deck-viewer .share-present-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 30px;
+      margin-bottom: 30px; }
+      .deck-profile .deck-viewer-container .deck-viewer .share-present-container a {
+        font-size: 18px;
+        margin-right: 30px; }
+        .deck-profile .deck-viewer-container .deck-viewer .share-present-container a img {
+          width: 15px;
+          margin-right: 10px; }
+        .deck-profile .deck-viewer-container .deck-viewer .share-present-container a:last-child {
+          margin-right: 0; }
+  .deck-profile .deck-viewer-container p.deck-description {
+    margin-top: 20px;
+    font-size: 15px; }
+
+@media (max-width: 767px) {
+  .deck-profile .deck-profile-sidebar-container-1 {
+    display: none; } }
+
+.deck-profile .deck-profile-sidebar-container-2 {
+  display: none; }
+  @media (max-width: 767px) {
+    .deck-profile .deck-profile-sidebar-container-2 {
+      display: block; } }
+
+.deck-profile .deck-profile-sidebar {
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px; }
+  .deck-profile .deck-profile-sidebar li {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #3c3c3c;
+    background-color: #191f2f; }
+  .deck-profile .deck-profile-sidebar li:last-child {
+    border-bottom: none; }
+  .deck-profile .deck-profile-sidebar label {
+    color: #969696;
+    font-size: 12px;
+    margin-bottom: 7px;
+    text-transform: uppercase; }
+  .deck-profile .deck-profile-sidebar h4 {
+    color: #fafafa;
+    font-size: 22px; }
+  .deck-profile .deck-profile-sidebar .btn {
+    margin-bottom: 10px; }
+  .deck-profile .deck-profile-sidebar .btn img {
+    margin-right: 10px; }
+  .deck-profile .deck-profile-sidebar .btn:hover {
+    color: #fafafa; }
+  .deck-profile .deck-profile-sidebar button.delete-deck {
+    margin-top: 40px; }
+
+.deck-profile .btn.present-deck {
+  background-color: #43b689; }

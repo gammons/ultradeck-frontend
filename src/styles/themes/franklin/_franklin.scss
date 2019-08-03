@@ -1,0 +1,77 @@
+/* Franklin */
+
+@import url('https://fonts.googleapis.com/css?family=Lemonada|Libre+Franklin');
+
+$primary-font: 'Libre Franklin';
+$secondary-font: 'lemonada';
+
+.franklin {
+  @import '../themes-global';
+
+  font-family: $primary-font;
+
+  em {
+    font-family: $secondary-font;
+    letter-spacing: -1.8px;
+  }
+
+  strong {
+    font-family: $secondary-font;
+    letter-spacing: -1.8px;
+  }
+
+  h1,h2,h3,h4,a,p {
+    font-family: $primary-font;
+  }
+
+  h1 {
+    font-size: 68px;
+  }
+
+  h2 {
+    font-size: 78px;
+  }
+
+  h3 {
+    font-size: 60px;
+  }
+
+  h4 {
+    font-size: 38px;
+  }
+
+  section ol {
+    list-style-type: decimal;
+  }
+
+  section ul {
+    list-style-type: disc;
+  }
+
+  section li {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    line-height: 1.2;
+  }
+
+  section p {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  section strong {
+    font-weight: bold;
+  }
+
+  .layout-picture-frame {
+    h2 {
+      font-size: 25px !important;
+      font-family: $secondary-font;
+    }
+  }
+}
+

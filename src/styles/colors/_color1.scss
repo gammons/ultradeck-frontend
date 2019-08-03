@@ -1,0 +1,80 @@
+.color1-preview {
+  background-image: $theme-color1-preview;
+}
+
+.color1 {
+  h1,h2,h3,h4,h5,h6 {
+    color: $theme-color1-fg;
+  }
+
+  section {
+    background-color: $theme-color1-bg;
+    background-image: url('./color_assets/bright-squares.png');
+    color: $theme-color1-fg;
+  }
+
+  .section > div.frame > div > p > code {
+    color: $theme-color1-fg;
+    background-color: transparent;
+  }
+
+  p, h1, h2, h3, h4 {
+    > code {
+      color: $theme-color1-fg;
+      background-color: transparent;
+      text-transform: none;
+    }
+  }
+
+  a {
+    color: $theme-color1-fg;
+    border-bottom: 1px solid $theme-color1-emphasis;
+  }
+
+  em {
+    color: $theme-color1-emphasis;
+  }
+
+  table, th, td {
+    border: 1px solid $theme-color1-table-border;
+  }
+
+  table th {
+    background-color: $theme-color1-table-th;
+  }
+
+  section .background-image-filter {
+    filter: brightness(1.7) contrast(0.5);
+    opacity: 0.5;
+  }
+
+  .layout-picture-frame {
+    .bordered {
+      border: 15px solid $theme-color1-emphasis;
+    }
+
+    .inner-box {
+      background-color: $theme-color1-fg;
+
+      h1 {
+        color: $theme-color1-bg;
+      }
+
+      h2 {
+        color: $theme-color1-bg;
+      }
+
+    }
+  }
+
+  .layout-circle-title {
+    .outer-circle {
+      background-color: $theme-color1-emphasis;
+    }
+    .circle {
+      background-color: $theme-color1-bg;
+    }
+  }
+
+  @import "../themes/code-dark";
+}

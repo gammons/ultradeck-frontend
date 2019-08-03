@@ -1,0 +1,31 @@
+.layout-picture-frame {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .inner-box {
+    width: 300px;
+    height: 300px;
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      width: 100%;
+      margin-top: 10px !important;
+      font-size: 50px !important;
+      word-wrap: normal;
+      white-space: normal !important;
+    }
+
+    h2 {
+      margin-top: 30px;
+      word-wrap: normal;
+      white-space: normal !important;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.present-deck {
+  position: relative; }
+
+.present-deck-container {
+  overflow: hidden;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  position: relative; }
+  .present-deck-container .deck-half {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000; }
+  .present-deck-container .deck-half-right {
+    left: 50%; }
+
+.present-deck-container > ul {
+  margin: 0; }
+
+.presenter-overlay {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 235px;
+  z-index: 2000;
+  height: 70px;
+  background-color: rgba(30, 30, 30, 0.8);
+  transition: opacity 0.5s ease-in-out; }
+  .presenter-overlay > ul {
+    display: flex;
+    align-items: top;
+    margin-top: 10px;
+    margin-left: 15px; }
+    .presenter-overlay > ul > li {
+      text-align: center;
+      margin-right: 25px;
+      font-size: 16px; }
+      .presenter-overlay > ul > li i {
+        font-size: 30px; }
+
+.overlay-out {
+  opacity: 0; }
+
+.overlay-in {
+  opacity: 1; }
