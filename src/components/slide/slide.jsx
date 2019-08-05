@@ -37,16 +37,14 @@ export default class Slide extends React.Component<SlideProps, object> {
   }
 
   componentDidMount() {
-    if (this.section) {
-      setTimeout(this.forceUpdate.bind(this), 50)
-      setTimeout(fitHeaders.bind(this, this.section), 100)
-    }
+    if (!this.section) return
+    setTimeout(this.forceUpdate.bind(this), 50)
+    setTimeout(fitHeaders.bind(this, this.section), 100)
   }
 
   componentDidUpdate() {
-    if (this.section) {
-      fitHeaders(this.section)
-    }
+    if (!this.section) return
+    fitHeaders(this.section)
   }
 
   onClick(ev: React.MouseEvent<HTMLDivElement>) {
@@ -83,12 +81,6 @@ export default class Slide extends React.Component<SlideProps, object> {
     } else {
       return this.props.parser.parse(this.props.slide.markdown, "")
     }
-  }
-
-  sectionClassName(): string {
-    const ret = ["section"]
-
-    return ret.join(" ")
   }
 
   themeCss(): string {
@@ -163,7 +155,7 @@ export default class Slide extends React.Component<SlideProps, object> {
           style={this.outerDivStyle()}
         >
           <section
-            className={`${this.sectionClassName()}`}
+            className="section"
             ref={s => (this.section = s)}
             style={{
               transformOrigin: "0 0",
