@@ -32,12 +32,12 @@ export default class Slide extends React.Component<SlideProps, object> {
     super(props)
 
     this.onClick = this.onClick.bind(this)
-
     this.hash = utils.uniqueHash()
   }
 
   componentDidMount() {
     if (!this.section) return
+
     setTimeout(this.forceUpdate.bind(this), 50)
     setTimeout(fitHeaders.bind(this, this.section), 100)
   }

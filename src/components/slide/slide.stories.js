@@ -15,8 +15,8 @@ const createSlide = (markdown: string): SlideModel => {
   slide.id = 1
   slide.position = 1
   slide.markdown = markdown
-  slide.theme_name = "bebas"
-  slide.color_variation = 8
+  slide.theme_name = "test"
+  slide.color_variation = 3
   return slide
 }
 
@@ -114,19 +114,47 @@ ${js}
 
 `)
 
-storiesOf("Components/Slides/Markdown/Tables", module).add(
-  "table support",
-  () => (
-    <div style={{ width: "100%" }}>
-      <h1>Selected</h1>
-      <Slide
-        slideStatus={Status.Current}
-        slide={tableSlideModel}
-        parser={parser}
-      />
-    </div>
-  )
-)
+storiesOf("Slides/Markdown/Headers", module)
+  .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
+  .add("single h1 - autofit", () => {
+    const slide = createSlide("# Heading 1")
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("single h1 - long text", () => {
+    const slide = createSlide("# this is a heading with a really long title")
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("single h1 with other elements", () => {
+    const slide = createSlide("# Heading 1\n\nThis is some regular text")
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("single h2", () => {
+    const slide = createSlide("## Heading 2")
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("all headers", () => {
+    const slide = createSlide(
+      "# Heading 1\n## Heading 2\n### Heading 3\n#### Heading 4"
+    )
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("bold / italic headers", () => {
+    const slide = createSlide(
+      "## This has **Bold** and *italics*, and ~~strikethrough~~"
+    )
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+
+storiesOf("Slides/Markdown/Tables", module).add("table support", () => (
+  <div style={{ width: "100%" }}>
+    <h1>Selected</h1>
+    <Slide
+      slideStatus={Status.Current}
+      slide={tableSlideModel}
+      parser={parser}
+    />
+  </div>
+))
 
 storiesOf("Components/Slides/Markdown/Splitting", module)
   .add("text split", () => (
