@@ -93,7 +93,7 @@ export default class Slide extends React.Component<SlideProps, object> {
 
   colorCss(): string {
     const ret = []
-    ret.push(`color${this.props.slide.color_variation}`)
+    ret.push(this.props.slide.color_class)
     ret.push(this.hash)
 
     return ret.join(" ")

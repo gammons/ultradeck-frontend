@@ -1,0 +1,52 @@
+.slide-color-1-preview {
+  background-image: linear-gradient(-45deg, #edf2f6 50%, #494953 50%); }
+
+.slide-color-1 h1, .slide-color-1 h2, .slide-color-1 h3, .slide-color-1 h4, .slide-color-1 h5, .slide-color-1 h6 {
+  color: #494953; }
+
+.slide-color-1 section {
+  background-color: #edf2f6;
+  background-image: url("./bright-squares.png");
+  color: #494953; }
+
+.slide-color-1 .section > div.frame > div > p > code {
+  color: #494953;
+  background-color: transparent; }
+
+.slide-color-1 p > code, .slide-color-1 h1 > code, .slide-color-1 h2 > code, .slide-color-1 h3 > code, .slide-color-1 h4 > code {
+  color: #494953;
+  background-color: transparent;
+  text-transform: none; }
+
+.slide-color-1 a {
+  color: #494953;
+  border-bottom: 1px solid #6a7efc; }
+
+.slide-color-1 em {
+  color: #6a7efc; }
+
+.slide-color-1 table, .slide-color-1 th, .slide-color-1 td {
+  border: 1px solid #333333; }
+
+.slide-color-1 table th {
+  background-color: rgba(0, 0, 0, 0.1); }
+
+.slide-color-1 section .background-image-filter {
+  filter: brightness(1.7) contrast(0.5);
+  opacity: 0.5; }
+
+.slide-color-1 .layout-picture-frame .bordered {
+  border: 15px solid #6a7efc; }
+
+.slide-color-1 .layout-picture-frame .inner-box {
+  background-color: #494953; }
+  .slide-color-1 .layout-picture-frame .inner-box h1 {
+    color: #edf2f6; }
+  .slide-color-1 .layout-picture-frame .inner-box h2 {
+    color: #edf2f6; }
+
+.slide-color-1 .layout-circle-title .outer-circle {
+  background-color: #6a7efc; }
+
+.slide-color-1 .layout-circle-title .circle {
+  background-color: #edf2f6; }

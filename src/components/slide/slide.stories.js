@@ -7,6 +7,8 @@ import Slide from "./slide"
 import SlideModel, { Status } from "../../models/slide"
 
 import "../../css/app.css"
+import "../../css/colors/color1/color.css"
+import "../../css/themes/theme1/theme.css"
 
 const parser = new MarkdownParser()
 
@@ -15,8 +17,8 @@ const createSlide = (markdown: string): SlideModel => {
   slide.id = 1
   slide.position = 1
   slide.markdown = markdown
-  slide.theme_name = "test"
-  slide.color_variation = 3
+  slide.theme_name = "bebas"
+  slide.color_class = "slide-color-1"
   return slide
 }
 
@@ -142,6 +144,48 @@ storiesOf("Slides/Markdown/Headers", module)
     const slide = createSlide(
       "## This has **Bold** and *italics*, and ~~strikethrough~~"
     )
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+
+storiesOf("Slides/Markdown/Background Images", module)
+  .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
+  .add("Simple background image", () => {
+    const slide = createSlide(`
+![](http://localhost:9009/white.jpg)
+# Background image
+    `)
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("Filtered background image", () => {
+    const slide = createSlide(`
+![filter](http://localhost:9009/porsche.jpg)
+# Background image
+    `)
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("Inline image - maxed out", () => {
+    const slide = createSlide(`
+![inline](http://localhost:9009/porsche.jpg)
+    `)
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("Kenburns background image", () => {
+    const slide = createSlide(`
+![kenburns filter](http://localhost:9009/porsche.jpg)
+# Background image
+    `)
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+
+storiesOf("Slides/Markdown/Code snippets", module)
+  .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
+  .add("Snippet 1", () => {
+    const slide = createSlide(`
+## Here is a code snippet
+\`\`\`javascript
+${js}
+\`\`\`
+    `)
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 

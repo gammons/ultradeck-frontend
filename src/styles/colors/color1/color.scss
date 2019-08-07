@@ -1,0 +1,90 @@
+$theme-color1-bg: rgb(237,242,246);
+$theme-color1-fg: rgb(73,73,83);
+$theme-slide-color-bg: rgb(237,242,246);
+$theme-slide-color-fg: rgb(73,73,83);
+$theme-slide-color-emphasis: rgb(106,126,252);
+$theme-slide-color-pre: rgb(50,50,50);
+
+$theme-slide-color-preview: linear-gradient(-45deg, $theme-color1-bg 50%, $theme-color1-fg 50%);
+
+$theme-slide-color-table-th: rgba(0,0,0,0.1);
+$theme-slide-color-table-border: rgb(51,51,51);
+
+.slide-color-1-preview {
+  background-image: $theme-slide-color-preview;
+}
+
+.slide-color-1 {
+  h1,h2,h3,h4,h5,h6 {
+    color: $theme-color1-fg;
+  }
+
+  section {
+    background-color: $theme-slide-color-bg;
+    background-image: url('./bright-squares.png');
+    color: $theme-slide-color-fg;
+  }
+
+  .section > div.frame > div > p > code {
+    color: $theme-slide-color-fg;
+    background-color: transparent;
+  }
+
+  p, h1, h2, h3, h4 {
+    > code {
+      color: $theme-slide-color-fg;
+      background-color: transparent;
+      text-transform: none;
+    }
+  }
+
+  a {
+    color: $theme-slide-color-fg;
+    border-bottom: 1px solid $theme-slide-color-emphasis;
+  }
+
+  em {
+    color: $theme-slide-color-emphasis;
+  }
+
+  table, th, td {
+    border: 1px solid $theme-slide-color-table-border;
+  }
+
+  table th {
+    background-color: $theme-slide-color-table-th;
+  }
+
+  section .background-image-filter {
+    filter: brightness(1.7) contrast(0.5);
+    opacity: 0.5;
+  }
+
+  .layout-picture-frame {
+    .bordered {
+      border: 15px solid $theme-slide-color-emphasis;
+    }
+
+    .inner-box {
+      background-color: $theme-slide-color-fg;
+
+      h1 {
+        color: $theme-slide-color-bg;
+      }
+
+      h2 {
+        color: $theme-slide-color-bg;
+      }
+
+    }
+  }
+
+  .layout-circle-title {
+    .outer-circle {
+      background-color: $theme-slide-color-emphasis;
+    }
+    .circle {
+      background-color: $theme-slide-color-bg;
+    }
+  }
+}

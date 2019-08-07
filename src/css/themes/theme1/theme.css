@@ -1,0 +1,103 @@
+/* Bebas */
+@font-face {
+  font-family: "bebas";
+  src: url("./bebas_neue_regular.otf");
+  font-weight: 200; }
+
+@font-face {
+  font-family: "bebas_bold";
+  src: url("./bebas_neue_bold.otf");
+  font-weight: 300; }
+
+@font-face {
+  font-family: "sketch_block";
+  src: url("./Sketch_Block.ttf");
+  font-weight: 200; }
+
+@font-face {
+  font-family: "Just Another Hand";
+  src: local("Just Another Hand"), local("JustAnotherHand-Regular"), url("./just-another-hand.woff2");
+  font-weight: 200; }
+
+.bebas {
+  font-family: "bebas"; }
+  .bebas table {
+    width: 100%;
+    font-size: 30px; }
+    .bebas table td, .bebas table th {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 5px;
+      padding-right: 5px; }
+  .bebas h1, .bebas h2, .bebas h3, .bebas h4 {
+    word-wrap: break-word;
+    text-align: center; }
+  .bebas section {
+    position: relative; }
+    .bebas section .left {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: calc(50% - 20px); }
+      .bebas section .left .background-image {
+        top: -10px;
+        left: -370px; }
+    .bebas section .right {
+      position: absolute;
+      top: 10px;
+      left: calc(50% + 10px);
+      width: calc(50% - 20px); }
+      .bebas section .right .background-image {
+        top: -10px; }
+  .bebas a {
+    font-family: "bebas"; }
+  .bebas em {
+    font-family: "Just Another Hand"; }
+  .bebas strong {
+    font-family: 'bebas_bold'; }
+  .bebas h1.singleHeader {
+    margin-top: 7% !important; }
+  .bebas h1, .bebas h2, .bebas h3, .bebas h4, .bebas h5, .bebas h6 {
+    margin-top: 1% !important;
+    font-family: 'bebas';
+    text-transform: uppercase; }
+  .bebas h1 {
+    font-size: 68px; }
+  .bebas h1 em {
+    font-size: 68px; }
+  .bebas h1.fit em {
+    font-size: inherit; }
+  .bebas h2 {
+    font-size: 90px; }
+  .bebas h2 em {
+    font-size: 100px; }
+  .bebas h3 {
+    font-size: 80px; }
+  .bebas h3 em {
+    font-size: 80px; }
+  .bebas h4 {
+    font-size: 38px;
+    text-transform: uppercase; }
+  .bebas h4 em {
+    font-size: 38px; }
+  .bebas section ol {
+    list-style-type: decimal; }
+  .bebas section ul {
+    list-style-type: disc; }
+  .bebas section li {
+    font-size: 38px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px; }
+  .bebas section p {
+    font-size: 38px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.2; }
+  .bebas .layout-picture-frame h1 {
+    margin-bottom: 20px; }
+  .bebas .layout-picture-frame h2 {
+    font-size: 25px !important;
+    font-family: "Just Another Hand"; }
+  .bebas .layout-circle-title h2 {
+    font-family: "Just Another Hand"; }

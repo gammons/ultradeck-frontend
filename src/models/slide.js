@@ -9,7 +9,7 @@ type SlideModelProps = {
   transition?: string,
   layout?: string,
   theme_name: string,
-  color_variation: number,
+  color_class: string,
   markdown?: string,
   custom_css?: string,
   presenter_notes?: string,
@@ -38,7 +38,7 @@ export default class SlideModel {
   custom_css: string | null
   presenter_notes: string | null
   theme_name: string
-  color_variation: number
+  color_class: string
   transition: ?string
   assets: Asset[]
 
@@ -47,7 +47,7 @@ export default class SlideModel {
     this.uuid = args.uuid || utils.generateUuid()
     this.position = args.position
     this.theme_name = args.theme_name
-    this.color_variation = args.color_variation
+    this.color_class = args.color_class
     this.markdown = args.markdown
     this.layout = args.layout
     this.custom_css = args.custom_css
@@ -60,7 +60,7 @@ export default class SlideModel {
     return new SlideModel({
       uuid: utils.generateUuid(),
       theme_name: this.theme_name,
-      color_variation: this.color_variation,
+      color_class: this.color_class,
       markdown: this.markdown,
       layout: this.layout,
       custom_css: this.custom_css,
@@ -79,7 +79,7 @@ export default class SlideModel {
       id: this.id,
       uuid: this.uuid,
       theme_name: this.theme_name,
-      color_variation: this.color_variation,
+      color_class: this.color_class,
       layout: this.layout,
       markdown: this.markdown,
       custom_css: this.custom_css,
