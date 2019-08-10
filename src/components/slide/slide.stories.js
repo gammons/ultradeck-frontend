@@ -18,7 +18,7 @@ const createSlide = (markdown: string): SlideModel => {
   slide.position = 1
   slide.markdown = markdown
   slide.themeClass = "theme-1"
-  slide.colorClass = "slide-color-1"
+  slide.colorClass = "color-1"
   return slide
 }
 
