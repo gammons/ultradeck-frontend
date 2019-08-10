@@ -207,7 +207,15 @@ storiesOf("Slides/Markdown/Tables", module).add("table support", () => (
   </div>
 ))
 
-storiesOf("Components/Slides/Markdown/Splitting", module)
+storiesOf("Slides/Markdown/Custom CSS", module)
+  .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
+  .add("using custom CSS on elements", () => {
+    const slide = createSlide("# blue stuff")
+    slide.custom_css = "h1 { color: blue; transform: rotate(-7deg); }"
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+
+storiesOf("Slides/Markdown/Splitting", module)
   .add("text split", () => (
     <div style={{ width: "100%" }}>
       <Slide
