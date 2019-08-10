@@ -124,6 +124,18 @@ storiesOf("Slides", module)
     return <Slide slideStatus={Status.Current} showPresenterNotes slide={slide} parser={parser} />
   })
 
+storiesOf("Slides/Layouts", module)
+  .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
+  .add("PictureFrame", () => {
+    const slide = createSlide("# Here is the title\n## Here is the subtitle")
+    slide.layout = "PictureFrame"
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("CircleTitle", () => {
+    const slide = createSlide("# Here is the title\n## Here is the subtitle")
+    slide.layout = "CircleTitle"
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
 
 storiesOf("Slides/Markdown/Headers", module)
   .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
