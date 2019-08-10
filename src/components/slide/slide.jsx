@@ -77,7 +77,7 @@ export default class Slide extends React.Component<SlideProps, object> {
 
   slideHtml() {
     if (this.props.showPresenterNotes) {
-      return this.props.parser.parse(this.props.slide.presenter_notes || "", "")
+      return this.props.parser.parse(this.props.slide.presenterNotes || "", "")
     } else {
       return this.props.parser.parse(this.props.slide.markdown, "")
     }
@@ -85,7 +85,7 @@ export default class Slide extends React.Component<SlideProps, object> {
 
   themeCss(): string {
     const ret = []
-    ret.push(this.props.slide.theme_class)
+    ret.push(this.props.slide.themeClass)
     ret.push(this.hash)
 
     return ret.join(" ")
@@ -93,7 +93,7 @@ export default class Slide extends React.Component<SlideProps, object> {
 
   colorCss(): string {
     const ret = []
-    ret.push(this.props.slide.color_class)
+    ret.push(this.props.slide.colorClass)
     ret.push(this.hash)
 
     return ret.join(" ")
@@ -131,7 +131,7 @@ export default class Slide extends React.Component<SlideProps, object> {
   }
 
   customCSS() {
-    return processCSS(this.props.slide.custom_css, this.hash)
+    return processCSS(this.props.slide.customCss, this.hash)
   }
 
   render() {

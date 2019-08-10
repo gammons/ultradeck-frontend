@@ -8,11 +8,11 @@ type SlideModelProps = {
   position?: number,
   transition?: string,
   layout?: string,
-  theme_class: string,
-  color_class: string,
+  themeClass: string,
+  colorClass: string,
   markdown?: string,
-  custom_css?: string,
-  presenter_notes?: string,
+  customCss?: string,
+  presenterNotes?: string,
   assets?: Asset[]
 }
 
@@ -25,8 +25,8 @@ export const Status = {
 // export Status
 
 const defaultArgs = {
-  theme_class: "theme-1",
-  color_class: "color-1"
+  themeClass: "theme-1",
+  colorClass: "color-1"
 }
 
 export default class SlideModel {
@@ -37,8 +37,8 @@ export default class SlideModel {
   layout: ?string
   custom_css: string | null
   presenter_notes: string | null
-  theme_class: string
-  color_class: string
+  themeClass: string
+  colorClass: string
   transition: ?string
   assets: Asset[]
 
@@ -46,12 +46,12 @@ export default class SlideModel {
     this.id = args.id
     this.uuid = args.uuid || utils.generateUuid()
     this.position = args.position
-    this.theme_class = args.theme_class
-    this.color_class = args.color_class
+    this.themeClass = args.themeClass
+    this.colorClass = args.colorClass
     this.markdown = args.markdown
     this.layout = args.layout
-    this.custom_css = args.custom_css
-    this.presenter_notes = args.presenter_notes
+    this.customCss = args.customCss
+    this.presenterNotes = args.presenterNotes
     this.transition = args.transition
     this.assets = []
   }
@@ -59,12 +59,12 @@ export default class SlideModel {
   clone() {
     return new SlideModel({
       uuid: utils.generateUuid(),
-      theme_class: this.theme_class,
-      color_class: this.color_class,
+      themeClass: this.themeClass,
+      colorClass: this.colorClass,
       markdown: this.markdown,
       layout: this.layout,
-      custom_css: this.custom_css,
-      presenter_notes: this.presenter_notes,
+      customCss: this.customCss,
+      presenterNotes: this.presenterNotes,
       transition: this.transition,
       assets: this.assets
     })
@@ -78,12 +78,12 @@ export default class SlideModel {
     return {
       id: this.id,
       uuid: this.uuid,
-      theme_class: this.theme_class,
-      color_class: this.color_class,
+      themeClass: this.themeClass,
+      colorClass: this.colorClass,
       layout: this.layout,
       markdown: this.markdown,
-      custom_css: this.custom_css,
-      presenter_notes: this.presenter_notes,
+      customCss: this.customCss,
+      presenterNotes: this.presenterNotes,
       transition: this.transition
     }
   }
