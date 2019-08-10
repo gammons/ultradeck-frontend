@@ -104,6 +104,12 @@ $secondary-font: 'Just Another Hand';
     margin-left: 25px;
   }
 
+  li:before {
+    content: "•";
+    padding-right: 8px;
+  }
+
+
   section p {
     font-size: 38px;
     margin-top: 10px;

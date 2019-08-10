@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Bebas */
 @font-face {
   font-family: "bebas";
@@ -61,6 +62,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 25px; }
+  .theme-1 li:before {
+    content: "•";
+    padding-right: 8px; }
   .theme-1 section p {
     font-size: 38px;
     margin-top: 10px;

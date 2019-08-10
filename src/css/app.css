@@ -63,7 +63,7 @@ section {
     user-select: none; }
   section a {
     cursor: pointer; }
-  section div {
+  section div, section li {
     display: block; }
   section pre {
     font-family: 'Inconsolata';

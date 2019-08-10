@@ -116,6 +116,15 @@ ${js}
 
 `)
 
+storiesOf("Slides", module)
+  .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
+  .add("presenter notes", () => {
+    const slide = createSlide("# cool slide")
+    slide.presenterNotes = `* here are\n* some of my notes`
+    return <Slide slideStatus={Status.Current} showPresenterNotes slide={slide} parser={parser} />
+  })
+
+
 storiesOf("Slides/Markdown/Headers", module)
   .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
   .add("single h1 - autofit", () => {
@@ -144,6 +153,13 @@ storiesOf("Slides/Markdown/Headers", module)
     const slide = createSlide(
       "## This has **Bold** and *italics*, and ~~strikethrough~~"
     )
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+
+storiesOf("Slides/Markdown/Lists", module)
+  .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
+  .add("Regular list", () => {
+    const slide = createSlide("* item 1\n* item 2\n* item 3")
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 
@@ -214,6 +230,7 @@ storiesOf("Slides/Markdown/Custom CSS", module)
     slide.custom_css = "h1 { color: blue; transform: rotate(-7deg); }"
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
+
 
 storiesOf("Slides/Markdown/Splitting", module)
   .add("text split", () => (
