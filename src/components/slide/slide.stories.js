@@ -163,6 +163,17 @@ storiesOf("Slides/Markdown/Lists", module)
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 
+storiesOf("Slides/Markdown/Bold + Emphasis", module)
+  .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
+  .add("Bold", () => {
+    const slide = createSlide("# header with **Bold**\nand regular content with **bold**")
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("Emphasis", () => {
+    const slide = createSlide("# header with *Emphasis*\nand regular content with *emphasis*")
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+
 storiesOf("Slides/Markdown/Links", module)
   .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
   .add("single h1 - autofit", () => {
