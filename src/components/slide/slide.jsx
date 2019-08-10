@@ -85,7 +85,7 @@ export default class Slide extends React.Component<SlideProps, object> {
 
   themeCss(): string {
     const ret = []
-    ret.push(this.props.slide.theme_name)
+    ret.push(this.props.slide.theme_class)
     ret.push(this.hash)
 
     return ret.join(" ")

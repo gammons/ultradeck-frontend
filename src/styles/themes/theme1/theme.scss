@@ -27,9 +27,7 @@
 $primary-font: 'bebas';
 $secondary-font: 'Just Another Hand';
 
-.bebas {
-  @import '../themes-global';
-
+.theme-1 {
   font-family: $primary-font;
 
   a {

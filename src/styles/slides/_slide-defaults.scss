@@ -27,29 +27,29 @@ section {
   // overflow: hidden;
   // position: absolute;
 
-  //all: initial;
   * {
     all: unset;
   }
 
   /* disable highlighting/selecting for a more native app feel */
-  :not(input):not(textarea),
-  :not(input):not(textarea)::after,
-  :not(input):not(textarea)::before {
+  :not(a):not(input):not(textarea),
+  :not(a):not(input):not(textarea)::after,
+  :not(a):not(input):not(textarea)::before {
         -webkit-user-select: none;
             user-select: none;
+  }
+
+  a {
+    cursor: pointer;
   }
 
   div {
     display: block;
   }
 
-  code {
-    font-family: 'Inconsolata';
-  }
-
   pre {
     font-family: 'Inconsolata';
+    white-space: pre;
     padding: 10px;
   }
 

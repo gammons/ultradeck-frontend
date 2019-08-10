@@ -17,7 +17,7 @@ const createSlide = (markdown: string): SlideModel => {
   slide.id = 1
   slide.position = 1
   slide.markdown = markdown
-  slide.theme_name = "bebas"
+  slide.theme_class = "theme-1"
   slide.color_class = "slide-color-1"
   return slide
 }
@@ -144,6 +144,13 @@ storiesOf("Slides/Markdown/Headers", module)
     const slide = createSlide(
       "## This has **Bold** and *italics*, and ~~strikethrough~~"
     )
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+
+storiesOf("Slides/Markdown/Links", module)
+  .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
+  .add("single h1 - autofit", () => {
+    const slide = createSlide("[here is a link](https://google.com) - links should have pointer cursor when hover, and open in new tab")
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 

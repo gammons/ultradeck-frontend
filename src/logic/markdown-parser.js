@@ -29,10 +29,13 @@ export default class MarkdownParser {
     this.md.assets = []
 
     this.md.options.highlight = (str: string, lang: string) => {
+      console.log("highlighting")
       if (lang && Hljs.getLanguage(lang)) {
+        console.log("running highlight")
         try {
           return Hljs.highlight(lang, str).value
         } catch (__) {
+          console.log("caught error")
           return ""
         }
       }

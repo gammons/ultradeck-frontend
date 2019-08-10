@@ -8,7 +8,7 @@ type SlideModelProps = {
   position?: number,
   transition?: string,
   layout?: string,
-  theme_name: string,
+  theme_class: string,
   color_class: string,
   markdown?: string,
   custom_css?: string,
@@ -25,8 +25,8 @@ export const Status = {
 // export Status
 
 const defaultArgs = {
-  theme_name: "bebas",
-  color_variation: 1
+  theme_class: "theme-1",
+  color_class: "color-1"
 }
 
 export default class SlideModel {
@@ -37,7 +37,7 @@ export default class SlideModel {
   layout: ?string
   custom_css: string | null
   presenter_notes: string | null
-  theme_name: string
+  theme_class: string
   color_class: string
   transition: ?string
   assets: Asset[]
@@ -46,7 +46,7 @@ export default class SlideModel {
     this.id = args.id
     this.uuid = args.uuid || utils.generateUuid()
     this.position = args.position
-    this.theme_name = args.theme_name
+    this.theme_class = args.theme_class
     this.color_class = args.color_class
     this.markdown = args.markdown
     this.layout = args.layout
@@ -59,7 +59,7 @@ export default class SlideModel {
   clone() {
     return new SlideModel({
       uuid: utils.generateUuid(),
-      theme_name: this.theme_name,
+      theme_class: this.theme_class,
       color_class: this.color_class,
       markdown: this.markdown,
       layout: this.layout,
@@ -78,7 +78,7 @@ export default class SlideModel {
     return {
       id: this.id,
       uuid: this.uuid,
-      theme_name: this.theme_name,
+      theme_class: this.theme_class,
       color_class: this.color_class,
       layout: this.layout,
       markdown: this.markdown,
