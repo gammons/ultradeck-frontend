@@ -54,10 +54,24 @@ section {
   }
 
   table {
+    display: table;
     width: 100%;
     font-size: 30px;
 
+    thead {
+      display: table-header-group;
+    }
+
+    tbody {
+      display: table-row-group;
+    }
+
+    tr {
+      display: table-row;
+    }
+
     td, th {
+      display: table-cell;
       padding-top: 10px;
       padding-bottom: 10px;
       padding-left: 5px;
