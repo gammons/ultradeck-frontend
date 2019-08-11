@@ -1,113 +1,85 @@
-.color-1-preview {
-  background-image: linear-gradient(-45deg, #edf2f6 50%, #494953 50%); }
-
-.color-1 h1, .color-1 h2, .color-1 h3, .color-1 h4, .color-1 h5, .color-1 h6 {
-  color: #494953; }
-
-.color-1 section {
-  background-color: #edf2f6;
-  background-image: url("./bright-squares.png");
-  color: #494953; }
-
-.color-1 .section > div.frame > div > p > code {
-  color: #494953;
-  background-color: transparent; }
-
-.color-1 p > code, .color-1 h1 > code, .color-1 h2 > code, .color-1 h3 > code, .color-1 h4 > code {
-  color: #494953;
-  background-color: transparent;
-  text-transform: none; }
-
-.color-1 a {
-  color: #494953;
-  border-bottom: 1px solid #6a7efc; }
-
-.color-1 em {
-  color: #6a7efc; }
-
-.color-1 table, .color-1 th, .color-1 td {
-  border: 1px solid #333333; }
-
-.color-1 table th {
-  background-color: rgba(0, 0, 0, 0.1); }
-
-.color-1 section .background-image-filter {
-  filter: brightness(1.7) contrast(0.5);
-  opacity: 0.5; }
-
-.color-1 .layout-picture-frame .bordered {
-  border: 15px solid #6a7efc; }
-
-.color-1 .layout-picture-frame .inner-box {
-  background-color: #494953; }
-  .color-1 .layout-picture-frame .inner-box h1 {
-    color: #edf2f6; }
-  .color-1 .layout-picture-frame .inner-box h2 {
-    color: #edf2f6; }
-
-.color-1 .layout-circle-title .outer-circle {
-  background-color: #6a7efc; }
-
-.color-1 .layout-circle-title .circle {
-  background-color: #edf2f6; }
-
-.color-1 pre {
-  background-color: #323232;
-  padding: 8px 15px;
-  display: block;
-  overflow: hidden;
-  color: #bababa;
-  line-height: 1.1;
-  font-size: 17px;
-  border-radius: 5px; }
-
-.color-1 .hljs-strong,
-.color-1 .hljs-emphasis {
-  color: #a8a8a2; }
-
-.color-1 .hljs-bullet,
-.color-1 .hljs-quote,
-.color-1 .hljs-link,
-.color-1 .hljs-number,
-.color-1 .hljs-regexp,
-.color-1 .hljs-literal {
-  color: #6896ba; }
-
-.color-1 .hljs-code,
-.color-1 .hljs-selector-class {
-  color: #a6e22e; }
-
-.color-1 .hljs-emphasis {
-  font-style: italic; }
-
-.color-1 .hljs-keyword,
-.color-1 .hljs-selector-tag,
-.color-1 .hljs-section,
-.color-1 .hljs-attribute,
-.color-1 .hljs-name,
-.color-1 .hljs-variable {
-  color: #cb7832; }
-
-.color-1 .hljs-params {
-  color: #b9b9b9; }
-
-.color-1 .hljs-string {
-  color: #6a8759; }
-
-.color-1 .hljs-subst,
-.color-1 .hljs-type,
-.color-1 .hljs-built_in,
-.color-1 .hljs-builtin-name,
-.color-1 .hljs-symbol,
-.color-1 .hljs-selector-id,
-.color-1 .hljs-selector-attr,
-.color-1 .hljs-selector-pseudo,
-.color-1 .hljs-template-tag,
-.color-1 .hljs-template-variable,
-.color-1 .hljs-addition {
-  color: #e0c46c; }
-
-.color-1 .hljs-comment,
-.color-1 .hljs-deletion,
-.color-1 .hljs-meta {
-  color: #7f7f7f; }
+.color-1 {
+  --theme-color-bg: rgb(237,242,246);
+  --theme-color-fg: rgb(73,73,83);
+  --theme-color-emphasis: rgb(106,126,252);
+  --theme-color-pre: rgb(50,50,50);
+  --theme-color-table-th: rgba(0,0,0,0.1);
+  --theme-color-table-border: rgb(51,51,51); }
+  .color-1 .preview {
+    background-image: linear-gradient(-45deg, var(--theme-color-bg) 50%, var(--theme-color-fg) 50%); }
+  .color-1 h1, .color-1 h2, .color-1 h3, .color-1 h4, .color-1 h5, .color-1 h6 {
+    color: var(--theme-color-fg); }
+  .color-1 section {
+    background-color: var(--theme-color-bg);
+    background-image: url("./bright-squares.png");
+    color: var(--theme-color-fg); }
+  .color-1 .section > div.frame > div > p > code {
+    color: var(--theme-color-fg);
+    background-color: transparent; }
+  .color-1 p > code, .color-1 h1 > code, .color-1 h2 > code, .color-1 h3 > code, .color-1 h4 > code {
+    color: var(--theme-color-fg);
+    background-color: transparent;
+    text-transform: none; }
+  .color-1 a {
+    color: var(--theme-color-fg);
+    border-bottom: 1px solid var(--theme-color-emphasis); }
+  .color-1 em {
+    color: var(--theme-color-emphasis); }
+  .color-1 table, .color-1 th, .color-1 td {
+    border: 1px solid var(--theme-color-table-border); }
+  .color-1 table th {
+    background-color: var(--theme-color-table-th); }
+  .color-1 section .background-image-filter {
+    filter: brightness(1.7) contrast(0.5);
+    opacity: 0.5; }
+  .color-1 pre {
+    background-color: #323232;
+    padding: 8px 15px;
+    display: block;
+    overflow: hidden;
+    color: #bababa;
+    line-height: 1.1;
+    font-size: 17px;
+    border-radius: 5px; }
+  .color-1 .hljs-strong,
+  .color-1 .hljs-emphasis {
+    color: #a8a8a2; }
+  .color-1 .hljs-bullet,
+  .color-1 .hljs-quote,
+  .color-1 .hljs-link,
+  .color-1 .hljs-number,
+  .color-1 .hljs-regexp,
+  .color-1 .hljs-literal {
+    color: #6896ba; }
+  .color-1 .hljs-code,
+  .color-1 .hljs-selector-class {
+    color: #a6e22e; }
+  .color-1 .hljs-emphasis {
+    font-style: italic; }
+  .color-1 .hljs-keyword,
+  .color-1 .hljs-selector-tag,
+  .color-1 .hljs-section,
+  .color-1 .hljs-attribute,
+  .color-1 .hljs-name,
+  .color-1 .hljs-variable {
+    color: #cb7832; }
+  .color-1 .hljs-params {
+    color: #b9b9b9; }
+  .color-1 .hljs-string {
+    color: #6a8759; }
+  .color-1 .hljs-subst,
+  .color-1 .hljs-type,
+  .color-1 .hljs-built_in,
+  .color-1 .hljs-builtin-name,
+  .color-1 .hljs-symbol,
+  .color-1 .hljs-selector-id,
+  .color-1 .hljs-selector-attr,
+  .color-1 .hljs-selector-pseudo,
+  .color-1 .hljs-template-tag,
+  .color-1 .hljs-template-variable,
+  .color-1 .hljs-addition {
+    color: #e0c46c; }
+  .color-1 .hljs-comment,
+  .color-1 .hljs-deletion,
+  .color-1 .hljs-meta {
+    color: #7f7f7f; }

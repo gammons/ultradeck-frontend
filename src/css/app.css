@@ -169,6 +169,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: center; }
+  .layout-picture-frame .bordered {
+    border: 15px solid var(--theme-color-emphasis); }
   .layout-picture-frame .inner-box {
     width: 300px;
     height: 300px;
@@ -177,17 +179,20 @@ section {
     border: 1px solid transparent;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    background-color: var(--theme-color-fg); }
     .layout-picture-frame .inner-box h1 {
       width: 100%;
       margin-top: 10px !important;
       font-size: 50px !important;
       word-wrap: normal;
-      white-space: normal !important; }
+      white-space: normal !important;
+      color: var(--theme-color-bg); }
     .layout-picture-frame .inner-box h2 {
       margin-top: 30px;
       word-wrap: normal;
-      white-space: normal !important; }
+      white-space: normal !important;
+      color: var(--theme-color-bg); }
 
 .layout-circle-title {
   width: 100%;
@@ -197,14 +202,16 @@ section {
   .layout-circle-title .outer-circle {
     padding: 3px;
     border-radius: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--theme-color-emphasis); }
   .layout-circle-title .circle {
     height: 400px;
     width: 400px;
     border-radius: 100%;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    background-color: var(--theme-color-bg); }
     .layout-circle-title .circle h1 {
       font-size: 50px !important;
       white-space: normal !important;

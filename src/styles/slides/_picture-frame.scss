@@ -4,6 +4,10 @@
   align-items: center;
   justify-content: center;
 
+  .bordered {
+    border: 15px solid var(--theme-color-emphasis);
+  }
+
   .inner-box {
     width: 300px;
     height: 300px;
@@ -13,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--theme-color-fg);
 
     h1 {
       width: 100%;
@@ -20,12 +25,14 @@
       font-size: 50px !important;
       word-wrap: normal;
       white-space: normal !important;
+      color: var(--theme-color-bg);
     }
 
     h2 {
       margin-top: 30px;
       word-wrap: normal;
       white-space: normal !important;
+      color: var(--theme-color-bg);
     }
   }
 }
