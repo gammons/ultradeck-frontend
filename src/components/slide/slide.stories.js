@@ -250,7 +250,7 @@ storiesOf("Slides/Markdown/Custom CSS", module)
   .addDecorator(s => <div style={{ width: "1000px" }}>{s()}</div>)
   .add("using custom CSS on elements", () => {
     const slide = createSlide("# blue stuff")
-    slide.custom_css = "h1 { color: blue; transform: rotate(-7deg); }"
+    slide.customCss = "h1 { color: blue; transform: rotate(-7deg); }"
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 
