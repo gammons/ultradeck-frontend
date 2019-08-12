@@ -1,13 +1,14 @@
-.color-1 {
-  --theme-color-bg: rgb(237,242,246);
-  --theme-color-fg: rgb(73,73,83);
-  --theme-color-emphasis: rgb(106,126,252);
-  --theme-color-pre: rgb(50,50,50);
+.color-4 {
+  --theme-color-bg: radial-gradient(rgb(52,64,69),rgb(32,44,49));
+  --theme-color-fg: rgb(242,84,105);
+  --theme-color-emphasis: rgb(255,255,255);
+  --theme-color-strong: rgb(255,255,255);
+  --theme-color-pre: rgb(222,222,222);
   --theme-color-table-th: rgba(0,0,0,0.1);
   --theme-color-table-border: rgb(51,51,51);
 
   .preview {
-    background-image: linear-gradient(-45deg, var(--theme-color-bg) 50%, var(--theme-color-fg) 50%);
+    background-image: linear-gradient(-45deg, --theme-color-fg 50%, rgb(52,64,69) 50%);
   }
 
   h1,h2,h3,h4,h5,h6 {
@@ -15,8 +16,7 @@
   }
 
   section {
-    background-color: var(--theme-color-bg);
-    background-image: url('./bright-squares.png');
+    background-image: var(--theme-color-bg);
     color: var(--theme-color-fg);
   }
 
@@ -42,6 +42,10 @@
     color: var(--theme-color-emphasis);
   }
 
+  strong {
+    color: var(--theme-color-strong);
+  }
+
   table, th, td {
     border: 1px solid var(--theme-color-table-border);
   }
@@ -51,8 +55,8 @@
   }
 
   section .background-image-filter {
-    filter: brightness(1.7) contrast(0.5);
-    opacity: 0.5;
+    filter: contrast(0.7) brightness(2.0);
+    opacity: 0.3;
   }
 
   pre {
@@ -125,5 +129,4 @@
   .hljs-meta {
     color: #7f7f7f;
   }
-
 }

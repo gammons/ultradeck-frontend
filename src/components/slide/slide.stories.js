@@ -7,7 +7,7 @@ import Slide from "./slide"
 import SlideModel, { Status } from "../../models/slide"
 
 import "../../css/app.css"
-import "../../css/colors/color1/color.css"
+import "../../css/colors/color10/color.css"
 import "../../css/themes/theme1/theme.css"
 
 const parser = new MarkdownParser()
@@ -18,7 +18,7 @@ const createSlide = (markdown: string): SlideModel => {
   slide.position = 1
   slide.markdown = markdown
   slide.themeClass = "theme-1"
-  slide.colorClass = "color-1"
+  slide.colorClass = "color-10"
   return slide
 }
 
@@ -41,7 +41,7 @@ for (let n of fibonacci()) {
 `
 
 storiesOf("Slides", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
   .add("presenter notes", () => {
     const slide = createSlide("# cool slide")
     slide.presenterNotes = `* here are\n* some of my notes`
@@ -49,7 +49,7 @@ storiesOf("Slides", module)
   })
 
 storiesOf("Slides/Layouts", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
   .add("PictureFrame", () => {
     const slide = createSlide("# Here is the title\n## Here is the subtitle")
     slide.layout = "PictureFrame"
@@ -62,7 +62,7 @@ storiesOf("Slides/Layouts", module)
   })
 
 storiesOf("Slides/Markdown/Headers", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
   .add("single h1 - autofit", () => {
     const slide = createSlide("# Heading 1")
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
@@ -93,14 +93,14 @@ storiesOf("Slides/Markdown/Headers", module)
   })
 
 storiesOf("Slides/Markdown/Lists", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
   .add("Regular list", () => {
     const slide = createSlide("* item 1\n* item 2\n* item 3")
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Bold + Emphasis", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
   .add("Bold", () => {
     const slide = createSlide("# header with **Bold**\nand regular content with **bold**")
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
@@ -111,14 +111,14 @@ storiesOf("Slides/Markdown/Bold + Emphasis", module)
   })
 
 storiesOf("Slides/Markdown/Links", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
   .add("single h1 - autofit", () => {
     const slide = createSlide("[here is a link](https://google.com) - links should have pointer cursor when hover, and open in new tab")
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Background Images", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
   .add("Simple background image", () => {
     const slide = createSlide(`
 ![](http://localhost:9009/white.jpg)
@@ -148,7 +148,7 @@ storiesOf("Slides/Markdown/Background Images", module)
   })
 
 storiesOf("Slides/Markdown/Code snippets", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
   .add("Snippet 1", () => {
     const slide = createSlide(`
 ## Here is a code snippet
@@ -170,7 +170,7 @@ tables!
 `)
 
 storiesOf("Slides/Markdown/Tables", module).add("table support", () => (
-  <div style={{ width: "100%" }}>
+  <div style={{ width: "50%" }}>
     <h1>Selected</h1>
     <Slide
       slideStatus={Status.Current}
@@ -181,7 +181,7 @@ storiesOf("Slides/Markdown/Tables", module).add("table support", () => (
 ))
 
 storiesOf("Slides/Markdown/Custom CSS", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
   .add("using custom CSS on elements", () => {
     const slide = createSlide("# blue stuff")
     slide.customCss = "h1 { color: blue; transform: rotate(-7deg); }"
@@ -256,7 +256,7 @@ ${js}
 
 storiesOf("Slides/Markdown/Splitting", module)
   .add("text split", () => (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "50%" }}>
       <Slide
         slideStatus={Status.Current}
         slide={textSplitSlideModel}
@@ -265,7 +265,7 @@ storiesOf("Slides/Markdown/Splitting", module)
     </div>
   ))
   .add("image split left", () => (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "50%" }}>
       <Slide
         slideStatus={Status.Current}
         slide={imageLeftSplitModel}
@@ -274,7 +274,7 @@ storiesOf("Slides/Markdown/Splitting", module)
     </div>
   ))
   .add("image split right", () => (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "50%" }}>
       <Slide
         slideStatus={Status.Current}
         slide={imageRightSplitModel}
@@ -283,7 +283,7 @@ storiesOf("Slides/Markdown/Splitting", module)
     </div>
   ))
   .add("inline image split left", () => (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "50%" }}>
       <Slide
         slideStatus={Status.Current}
         slide={inlineImageLeftSplitModel}
@@ -292,7 +292,7 @@ storiesOf("Slides/Markdown/Splitting", module)
     </div>
   ))
   .add("inline image split right", () => (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "50%" }}>
       <Slide
         slideStatus={Status.Current}
         slide={inlineImageRightSplitModel}
@@ -301,7 +301,7 @@ storiesOf("Slides/Markdown/Splitting", module)
     </div>
   ))
   .add("code sample split left", () => (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "50%" }}>
       <Slide
         slideStatus={Status.Current}
         slide={codeLeftSplitModel}
@@ -310,7 +310,7 @@ storiesOf("Slides/Markdown/Splitting", module)
     </div>
   ))
   .add("code sample split right", () => (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "50%" }}>
       <Slide
         slideStatus={Status.Current}
         slide={codeRightSplitModel}
