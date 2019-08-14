@@ -34,7 +34,7 @@ export default class SlideModel {
   uuid: string
   position: number
   markdown: ?string
-  layout: ?string
+  layoutClass: ?string
   custom_css: string | null
   presenter_notes: string | null
   themeClass: string
@@ -49,7 +49,7 @@ export default class SlideModel {
     this.themeClass = args.themeClass
     this.colorClass = args.colorClass
     this.markdown = args.markdown
-    this.layout = args.layout
+    this.layoutClass = args.layoutClass
     this.customCss = args.customCss
     this.presenterNotes = args.presenterNotes
     this.transition = args.transition
@@ -62,7 +62,7 @@ export default class SlideModel {
       themeClass: this.themeClass,
       colorClass: this.colorClass,
       markdown: this.markdown,
-      layout: this.layout,
+      layoutClass: this.layoutClass,
       customCss: this.customCss,
       presenterNotes: this.presenterNotes,
       transition: this.transition,
@@ -80,7 +80,7 @@ export default class SlideModel {
       uuid: this.uuid,
       themeClass: this.themeClass,
       colorClass: this.colorClass,
-      layout: this.layout,
+      layoutClass: this.layoutClass,
       markdown: this.markdown,
       customCss: this.customCss,
       presenterNotes: this.presenterNotes,

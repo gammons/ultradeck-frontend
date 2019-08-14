@@ -1,5 +1,6 @@
 .color-4 {
-  --theme-color-bg: radial-gradient(rgb(52,64,69),rgb(32,44,49));
+  --theme-color-bg: rgb(52,64,69);
+  --theme-color-bg-gradient: radial-gradient(rgb(52,64,69),rgb(32,44,49));
   --theme-color-fg: rgb(242,84,105);
   --theme-color-emphasis: rgb(255,255,255);
   --theme-color-strong: rgb(255,255,255);
@@ -11,7 +12,7 @@
   .color-4 h1, .color-4 h2, .color-4 h3, .color-4 h4, .color-4 h5, .color-4 h6 {
     color: var(--theme-color-fg); }
   .color-4 section {
-    background-image: var(--theme-color-bg);
+    background-image: var(--theme-color-bg-gradient);
     color: var(--theme-color-fg); }
   .color-4 .section > div.frame > div > p > code {
     color: var(--theme-color-fg);

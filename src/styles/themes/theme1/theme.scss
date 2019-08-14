@@ -24,22 +24,23 @@
   font-weight: 200;
 }
 
-$primary-font: 'bebas';
-$secondary-font: 'Just Another Hand';
-
 .theme-1 {
-  font-family: $primary-font;
+  --primary-font: 'bebas';
+  --bold-font: 'bebas_bold';
+  --secondary-font: 'Just Another Hand';
+
+  font-family: var(--primary-font);
 
   a {
-    font-family: $primary-font;
+    font-family: var(--primary-font);
   }
 
   em {
-    font-family: $secondary-font;
+    font-family: var(--secondary-font);
   }
 
   strong {
-    font-family: 'bebas_bold';
+    font-family: var(--bold-font);
   }
 
   h1.singleHeader {
@@ -48,7 +49,7 @@ $secondary-font: 'Just Another Hand';
 
   h1,h2,h3,h4,h5,h6 {
     margin-top: 1% !important;
-    font-family: 'bebas';
+    font-family: var(--primary-font);
     text-transform: uppercase;
   }
 
@@ -123,15 +124,14 @@ $secondary-font: 'Just Another Hand';
     }
     h2 {
       font-size: 25px !important;
-      font-family: $secondary-font;
+      font-family: var(--secondary-font);
     }
   }
 
   .layout-circle-title {
     h2 {
-      font-family: $secondary-font;
+      font-family: var(--secondary-font);
 
     }
-
   }
 }

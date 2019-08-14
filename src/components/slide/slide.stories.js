@@ -49,15 +49,15 @@ storiesOf("Slides", module)
   })
 
 storiesOf("Slides/Layouts", module)
-  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
   .add("PictureFrame", () => {
     const slide = createSlide("# Here is the title\n## Here is the subtitle")
-    slide.layout = "PictureFrame"
+    slide.layoutClass = "layout-picture-frame"
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
   .add("CircleTitle", () => {
     const slide = createSlide("# Here is the title\n## Here is the subtitle")
-    slide.layout = "CircleTitle"
+    slide.layoutClass = "layout-circle-title"
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 

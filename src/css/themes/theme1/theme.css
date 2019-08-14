@@ -21,18 +21,21 @@
   font-weight: 200; }
 
 .theme-1 {
-  font-family: "bebas"; }
+  --primary-font: 'bebas';
+  --bold-font: 'bebas_bold';
+  --secondary-font: 'Just Another Hand';
+  font-family: var(--primary-font); }
   .theme-1 a {
-    font-family: "bebas"; }
+    font-family: var(--primary-font); }
   .theme-1 em {
-    font-family: "Just Another Hand"; }
+    font-family: var(--secondary-font); }
   .theme-1 strong {
-    font-family: 'bebas_bold'; }
+    font-family: var(--bold-font); }
   .theme-1 h1.singleHeader {
     margin-top: 7% !important; }
   .theme-1 h1, .theme-1 h2, .theme-1 h3, .theme-1 h4, .theme-1 h5, .theme-1 h6 {
     margin-top: 1% !important;
-    font-family: 'bebas';
+    font-family: var(--primary-font);
     text-transform: uppercase; }
   .theme-1 h1 {
     font-size: 68px; }
@@ -74,6 +77,6 @@
     margin-bottom: 20px; }
   .theme-1 .layout-picture-frame h2 {
     font-size: 25px !important;
-    font-family: "Just Another Hand"; }
+    font-family: var(--secondary-font); }
   .theme-1 .layout-circle-title h2 {
-    font-family: "Just Another Hand"; }
+    font-family: var(--secondary-font); }

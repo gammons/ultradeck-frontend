@@ -1,8 +1,5 @@
 // @flow
 import * as React from "react"
-import { SFC } from "react"
-
-import * as Layouts from "./layouts"
 
 import fitHeaders from "../../logic/fit-header"
 import processCSS from "../../logic/prefixed-custom-css"
@@ -100,7 +97,8 @@ export default class Slide extends React.Component<SlideProps, object> {
   }
 
   frameClassName() {
-    const ret = ["frame"]
+    const ret = []
+    ret.push(this.props.slide.layoutClass || "frame")
     if (this.slideHtml().includes("singleHeader")) {
       ret.push("singleElement")
     }
@@ -139,10 +137,6 @@ export default class Slide extends React.Component<SlideProps, object> {
       __html: this.slideHtml()
     })
 
-    const Layout = this.props.slide.layout
-      ? Layouts[this.props.slide.layout]
-      : FrameLayout
-
     return (
       <div
         onClick={this.onClick}
@@ -164,17 +158,16 @@ export default class Slide extends React.Component<SlideProps, object> {
               height: constants.SLIDE_HEIGHT
             }}
           >
-            <Layout frameClassName={this.frameClassName()}>
-              <div dangerouslySetInnerHTML={createMarkup()} />
-            </Layout>
+            <div className={this.frameClassName()}>
+              <div>
+                <div>
+                  <div dangerouslySetInnerHTML={createMarkup()} />
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </div>
     )
   }
 }
-
-const FrameLayout: SFC<{ frameClassName: string }> = ({
-  children,
-  frameClassName
-}) => <div className={frameClassName}>{children}</div>
