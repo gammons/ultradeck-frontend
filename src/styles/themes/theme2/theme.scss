@@ -1,22 +1,21 @@
 /* Fauna */
-@import '../themes-global';
-
 @import url('https://fonts.googleapis.com/css?family=Cabin|Patrick+Hand');
 
 $primary-font: 'Cabin';
 $secondary-font: 'Patrick Hand';
 
-.fauna {
-  @import '../themes-global';
+.theme-2  {
+  --primary-font: "Cabin";
+  --secondary-font: "Patrick Hand";
 
-  font-family: $primary-font;
+  font-family: var(--primary-font);
 
   h1,h2,h3,h4,p,a {
-    font-family: $primary-font;
+    font-family: var(--primary-font);
   }
 
   em {
-    font-family: $secondary-font;
+    font-family: var(--primary-font);
   }
 
 

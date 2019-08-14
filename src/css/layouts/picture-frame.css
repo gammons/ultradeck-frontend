@@ -2,12 +2,10 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  > div {
-    border: 15px solid var(--theme-color-emphasis);
-
-    > div {
+  justify-content: center; }
+  .layout-picture-frame > div {
+    border: 15px solid var(--theme-color-emphasis); }
+    .layout-picture-frame > div > div {
       width: 300px;
       height: 300px;
       margin: 2px;
@@ -16,23 +14,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--theme-color-fg);
-
-      h1 {
+      background-color: var(--theme-color-fg); }
+      .layout-picture-frame > div > div h1 {
         width: 100%;
         margin-top: 10px !important;
         font-size: 50px !important;
         word-wrap: normal;
         white-space: normal !important;
         color: var(--theme-color-bg);
-      }
-
-      h2 {
+        font-family: var(--primary-font); }
+      .layout-picture-frame > div > div h2 {
         margin-top: 30px;
         word-wrap: normal;
         white-space: normal !important;
         color: var(--theme-color-bg);
-      }
-    }
-  }
-}
+        font-family: var(--secondary-font);
+        font-size: 25px; }

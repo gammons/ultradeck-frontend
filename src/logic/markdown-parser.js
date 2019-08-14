@@ -5,9 +5,6 @@ import * as mila from "markdown-it-link-attributes"
 import * as Hljs from "highlight.js"
 import * as emoji from "node-emoji"
 
-import AssetModel from "../models/asset"
-//import MarkdownItWithOptions from '../models/markdown-it-with-options'
-
 import ImagePlugin from "./md-parser-plugins/md-image-plugin"
 import HeadingPlugin from "./md-parser-plugins/md-heading-plugin"
 import SingleHeadingPlugin from "./md-parser-plugins/md-single-heading-plugin"
@@ -29,22 +26,15 @@ export default class MarkdownParser {
     this.md.assets = []
 
     this.md.options.highlight = (str: string, lang: string) => {
-      console.log("highlighting")
       if (lang && Hljs.getLanguage(lang)) {
-        console.log("running highlight")
         try {
           return Hljs.highlight(lang, str).value
         } catch (__) {
-          console.log("caught error")
           return ""
         }
       }
       return ""
     }
-  }
-
-  setAssets(assets: AssetModel[]) {
-    this.md.assets = assets
   }
 
   parse(rawMarkdown: string, assetsUrl: string) {

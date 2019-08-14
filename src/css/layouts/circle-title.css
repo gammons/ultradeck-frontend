@@ -1,0 +1,29 @@
+.layout-circle-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .layout-circle-title > div {
+    padding: 3px;
+    border-radius: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--theme-color-emphasis); }
+    .layout-circle-title > div > div {
+      height: 400px;
+      width: 400px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--theme-color-bg); }
+      .layout-circle-title > div > div h1 {
+        font-size: 50px !important;
+        white-space: normal !important;
+        width: 350px;
+        text-align: center;
+        margin-left: 15px;
+        margin-bottom: 20px; }
+      .layout-circle-title > div > div h2 {
+        font-size: 30px !important;
+        margin-left: 15px;
+        width: 350px; }

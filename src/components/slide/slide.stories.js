@@ -14,8 +14,6 @@ const parser = new MarkdownParser()
 
 const createSlide = (markdown: string): SlideModel => {
   const slide = new SlideModel()
-  slide.id = 1
-  slide.position = 1
   slide.markdown = markdown
   slide.themeClass = "theme-1"
   slide.colorClass = "color-10"
