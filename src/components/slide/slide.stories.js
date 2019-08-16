@@ -7,7 +7,6 @@ import Slide from "./slide"
 import SlideModel, { Status } from "../../models/slide"
 
 import "../../css/app.css"
-import "../../css/colors/color10/color.css"
 import "../../css/themes/theme1/theme.css"
 
 const parser = new MarkdownParser()
@@ -16,7 +15,7 @@ const createSlide = (markdown: string): SlideModel => {
   const slide = new SlideModel()
   slide.markdown = markdown
   slide.themeClass = "theme-1"
-  slide.colorClass = "color-10"
+  slide.colorClass = "color-1"
   return slide
 }
 
