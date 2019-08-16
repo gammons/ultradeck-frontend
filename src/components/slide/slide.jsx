@@ -10,6 +10,8 @@ import MarkdownParser from "../../logic/markdown-parser"
 
 import utils from "../../models/utils"
 
+import "./slide.css"
+
 export type SlideProps = {
   slide: SlideModel,
   parser: MarkdownParser,
