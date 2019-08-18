@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react"
 import { storiesOf } from "@storybook/react"
+import { withKnobs, select } from "@storybook/addon-knobs"
 
 import MarkdownParser from "../../logic/markdown-parser"
 import Slide from "./slide"
@@ -8,11 +9,14 @@ import SlideModel, { Status } from "../../models/slide"
 
 const parser = new MarkdownParser()
 
+const colors = ["color-1","color-2","color-3","color-4","color-5","color-6","color-7","color-8","color-9","color-10"]
+const themes = ["theme-1","theme-2","theme-3","theme-4","theme-5","theme-6","theme-7"]
+
 const createSlide = (markdown: string): SlideModel => {
   const slide = new SlideModel()
   slide.markdown = markdown
-  slide.themeClass = "theme-1"
-  slide.colorClass = "color-1"
+  slide.themeClass = select("Theme", themes, "theme-1")
+  slide.colorClass = select("Color", colors, "color-1")
   return slide
 }
 
@@ -36,6 +40,7 @@ for (let n of fibonacci()) {
 
 storiesOf("Slides", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(withKnobs)
   .add("presenter notes", () => {
     const slide = createSlide("# cool slide")
     slide.presenterNotes = `* here are\n* some of my notes`
