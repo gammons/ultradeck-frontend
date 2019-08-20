@@ -29,12 +29,14 @@ export default class Slide extends React.Component<SlideProps, object> {
 
   constructor(props: SlideProps) {
     super(props)
+    console.log("slide constructor")
 
     this.onClick = this.onClick.bind(this)
     this.hash = utils.uniqueHash()
   }
 
   componentDidMount() {
+    console.log("slide componentDidMount")
     if (!this.section) return
 
     setTimeout(this.forceUpdate.bind(this), 50)
@@ -42,6 +44,7 @@ export default class Slide extends React.Component<SlideProps, object> {
   }
 
   componentDidUpdate() {
+    console.log("slide componentDidUpdate")
     if (!this.section) return
     fitHeaders(this.section)
   }
@@ -135,6 +138,7 @@ export default class Slide extends React.Component<SlideProps, object> {
   }
 
   render() {
+    console.log("Slide render")
     const createMarkup = () => ({
       __html: this.slideHtml()
     })

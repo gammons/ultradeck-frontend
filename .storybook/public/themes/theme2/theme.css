@@ -1,5 +1,17 @@
 /* Fauna */
-@import url('https://fonts.googleapis.com/css?family=Cabin|Patrick+Hand');
+@font-face {
+  font-family: "Cabin";
+  src: url("./cabin.woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("./patrick_hand.woff2");
+  font-style: normal;
+  font-weight: 400;
+}
 
 .theme-2  {
   --primary-font: "Cabin";

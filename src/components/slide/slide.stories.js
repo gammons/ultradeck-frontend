@@ -5,18 +5,40 @@ import { withKnobs, select } from "@storybook/addon-knobs"
 
 import MarkdownParser from "../../logic/markdown-parser"
 import Slide from "./slide"
+import ScreenFitter from "./screenFitter"
 import SlideModel, { Status } from "../../models/slide"
 
 const parser = new MarkdownParser()
 
-const colors = ["color-1","color-2","color-3","color-4","color-5","color-6","color-7","color-8","color-9","color-10"]
-const themes = ["theme-1","theme-2","theme-3","theme-4","theme-5","theme-6","theme-7"]
+const colors = [
+  "color-1",
+  "color-2",
+  "color-3",
+  "color-4",
+  "color-5",
+  "color-6",
+  "color-7",
+  "color-8",
+  "color-9",
+  "color-10"
+]
+const themes = [
+  "theme-1",
+  "theme-2",
+  "theme-3",
+  "theme-4",
+  "theme-5",
+  "theme-6",
+  "theme-7"
+]
 
 const createSlide = (markdown: string): SlideModel => {
   const slide = new SlideModel()
   slide.markdown = markdown
   slide.themeClass = select("Theme", themes, "theme-1")
   slide.colorClass = select("Color", colors, "color-1")
+  console.log("themeClass = ", slide.themeClass)
+  console.log("colorClass = ", slide.colorClass)
   return slide
 }
 
@@ -39,16 +61,28 @@ for (let n of fibonacci()) {
 `
 
 storiesOf("Slides", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => (
+    <div style={{ width: "30%" }}>
+      <ScreenFitter>{s()}</ScreenFitter>
+    </div>
+  ))
   .addDecorator(withKnobs)
   .add("presenter notes", () => {
     const slide = createSlide("# cool slide")
     slide.presenterNotes = `* here are\n* some of my notes`
-    return <Slide slideStatus={Status.Current} showPresenterNotes slide={slide} parser={parser} />
+    return (
+      <Slide
+        slideStatus={Status.Current}
+        showPresenterNotes
+        slide={slide}
+        parser={parser}
+      />
+    )
   })
 
 storiesOf("Slides/Layouts", module)
-  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
+  .addDecorator(withKnobs)
   .add("PictureFrame", () => {
     const slide = createSlide("# Here is the title\n## Here is the subtitle")
     slide.layoutClass = "layout-picture-frame"
@@ -62,6 +96,7 @@ storiesOf("Slides/Layouts", module)
 
 storiesOf("Slides/Markdown/Headers", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(withKnobs)
   .add("single h1 - autofit", () => {
     const slide = createSlide("# Heading 1")
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
@@ -93,6 +128,7 @@ storiesOf("Slides/Markdown/Headers", module)
 
 storiesOf("Slides/Markdown/Lists", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(withKnobs)
   .add("Regular list", () => {
     const slide = createSlide("* item 1\n* item 2\n* item 3")
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
@@ -100,24 +136,33 @@ storiesOf("Slides/Markdown/Lists", module)
 
 storiesOf("Slides/Markdown/Bold + Emphasis", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(withKnobs)
   .add("Bold", () => {
-    const slide = createSlide("# header with **Bold**\nand regular content with **bold**")
+    const slide = createSlide(
+      "# header with **Bold**\nand regular content with **bold**"
+    )
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
   .add("Emphasis", () => {
-    const slide = createSlide("# header with *Emphasis*\nand regular content with *emphasis*")
+    const slide = createSlide(
+      "# header with *Emphasis*\nand regular content with *emphasis*"
+    )
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Links", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(withKnobs)
   .add("single h1 - autofit", () => {
-    const slide = createSlide("[here is a link](https://google.com) - links should have pointer cursor when hover, and open in new tab")
+    const slide = createSlide(
+      "[here is a link](https://google.com) - links should have pointer cursor when hover, and open in new tab"
+    )
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Background Images", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(withKnobs)
   .add("Simple background image", () => {
     const slide = createSlide(`
 ![](http://localhost:9009/white.jpg)
@@ -148,6 +193,7 @@ storiesOf("Slides/Markdown/Background Images", module)
 
 storiesOf("Slides/Markdown/Code snippets", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(withKnobs)
   .add("Snippet 1", () => {
     const slide = createSlide(`
 ## Here is a code snippet
@@ -189,6 +235,7 @@ storiesOf("Slides/Markdown/Tables", module).add("table support", () => (
 
 storiesOf("Slides/Markdown/Custom CSS", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
+  .addDecorator(withKnobs)
   .add("using custom CSS on elements", () => {
     const slide = createSlide("# blue stuff")
     slide.customCss = "h1 { color: blue; transform: rotate(-7deg); }"
@@ -203,8 +250,7 @@ this is some text on the left side
 this is some text on the right side
 `)
 
-const imgUrl =
-  "http://localhost:9009/porsche.jpg"
+const imgUrl = "http://localhost:9009/porsche.jpg"
 
 const imageLeftSplitModel = createSlide(`
 ![](${imgUrl})
@@ -262,6 +308,7 @@ ${js}
 `)
 
 storiesOf("Slides/Markdown/Splitting", module)
+  .addDecorator(withKnobs)
   .add("text split", () => (
     <div style={{ width: "100%" }}>
       <Slide
