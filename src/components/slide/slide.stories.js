@@ -5,7 +5,6 @@ import { withKnobs, select } from "@storybook/addon-knobs"
 
 import MarkdownParser from "../../logic/markdown-parser"
 import Slide from "./slide"
-import ScreenFitter from "./screenFitter"
 import SlideModel, { Status } from "../../models/slide"
 
 const parser = new MarkdownParser()
@@ -37,8 +36,6 @@ const createSlide = (markdown: string): SlideModel => {
   slide.markdown = markdown
   slide.themeClass = select("Theme", themes, "theme-1")
   slide.colorClass = select("Color", colors, "color-1")
-  console.log("themeClass = ", slide.themeClass)
-  console.log("colorClass = ", slide.colorClass)
   return slide
 }
 
@@ -61,11 +58,7 @@ for (let n of fibonacci()) {
 `
 
 storiesOf("Slides", module)
-  .addDecorator(s => (
-    <div style={{ width: "30%" }}>
-      <ScreenFitter>{s()}</ScreenFitter>
-    </div>
-  ))
+  .addDecorator(s => <div style={{ width: "100%", height: "100%" }}>{s()}</div>)
   .addDecorator(withKnobs)
   .add("presenter notes", () => {
     const slide = createSlide("# cool slide")
@@ -74,6 +67,7 @@ storiesOf("Slides", module)
       <Slide
         slideStatus={Status.Current}
         showPresenterNotes
+        widthPadding={20}
         slide={slide}
         parser={parser}
       />
@@ -81,7 +75,7 @@ storiesOf("Slides", module)
   })
 
 storiesOf("Slides/Layouts", module)
-  .addDecorator(s => <div style={{ width: "50%" }}>{s()}</div>)
+  .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
   .addDecorator(withKnobs)
   .add("PictureFrame", () => {
     const slide = createSlide("# Here is the title\n## Here is the subtitle")
@@ -99,6 +93,10 @@ storiesOf("Slides/Markdown/Headers", module)
   .addDecorator(withKnobs)
   .add("single h1 - autofit", () => {
     const slide = createSlide("# Heading 1")
+    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+  })
+  .add("single h1 - autofit - multiple lines", () => {
+    const slide = createSlide("# Heading 1\n# Heading 1 another\n# Heading 1")
     return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
   })
   .add("single h1 - long text", () => {

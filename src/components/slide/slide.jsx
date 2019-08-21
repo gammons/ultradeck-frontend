@@ -10,6 +10,8 @@ import MarkdownParser from "../../logic/markdown-parser"
 
 import utils from "../../models/utils"
 
+import resizeListener from "./resizeListener"
+
 import "./slide.css"
 
 export type SlideProps = {
@@ -18,25 +20,24 @@ export type SlideProps = {
   slideStatus?: Status,
   showPresenterNotes: ?boolean,
   width: ?number,
+  widthPadding: ?number,
   zoom: ?number,
   onClick(ev: React.MouseEvent): ?void
 }
 
-export default class Slide extends React.Component<SlideProps, object> {
+class Slide extends React.Component<SlideProps, object> {
   hash: string
   section: HTMLElement | null
   slideHolder: HTMLElement | null
 
   constructor(props: SlideProps) {
     super(props)
-    console.log("slide constructor")
 
     this.onClick = this.onClick.bind(this)
     this.hash = utils.uniqueHash()
   }
 
   componentDidMount() {
-    console.log("slide componentDidMount")
     if (!this.section) return
 
     setTimeout(this.forceUpdate.bind(this), 50)
@@ -44,7 +45,6 @@ export default class Slide extends React.Component<SlideProps, object> {
   }
 
   componentDidUpdate() {
-    console.log("slide componentDidUpdate")
     if (!this.section) return
     fitHeaders(this.section)
   }
@@ -138,7 +138,6 @@ export default class Slide extends React.Component<SlideProps, object> {
   }
 
   render() {
-    console.log("Slide render")
     const createMarkup = () => ({
       __html: this.slideHtml()
     })
@@ -177,3 +176,5 @@ export default class Slide extends React.Component<SlideProps, object> {
     )
   }
 }
+
+export default resizeListener(Slide)
