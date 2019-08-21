@@ -116,10 +116,11 @@ class Slide extends React.Component<SlideProps, object> {
     if (this.props.slide.transition) {
       ret.push(`transition-${this.props.slide.transition}-effect`)
     }
-    if (this.props.slideStatus) {
-      ret.push(this.props.slideStatus)
-    }
     return ret.join(" ")
+  }
+
+  sectionClassName() {
+    return this.props.slideStatus
   }
 
   outerDivStyle(): object {
@@ -142,6 +143,7 @@ class Slide extends React.Component<SlideProps, object> {
       __html: this.slideHtml()
     })
 
+    console.log("slide props = ", this.props)
     return (
       <div
         onClick={this.onClick}
@@ -154,7 +156,7 @@ class Slide extends React.Component<SlideProps, object> {
           style={this.outerDivStyle()}
         >
           <section
-            className="section"
+            className={this.sectionClassName()}
             ref={s => (this.section = s)}
             style={{
               transformOrigin: "0 0",
