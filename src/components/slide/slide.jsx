@@ -143,7 +143,6 @@ class Slide extends React.Component<SlideProps, object> {
       __html: this.slideHtml()
     })
 
-    console.log("slide props = ", this.props)
     return (
       <div
         onClick={this.onClick}
