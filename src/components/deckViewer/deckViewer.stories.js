@@ -10,6 +10,7 @@ const createSlide = (markdown: string): SlideModel => {
   const slide = new SlideModel()
   slide.markdown = markdown
   slide.themeClass = "theme-1"
+  slide.transition = "slide"
   slide.colorClass = "color-1"
   return slide
 }

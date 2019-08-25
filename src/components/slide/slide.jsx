@@ -10,8 +10,6 @@ import MarkdownParser from "../../logic/markdown-parser"
 
 import utils from "../../models/utils"
 
-import resizeListener from "./resizeListener"
-
 import "./slide.css"
 
 export type SlideProps = {
@@ -116,11 +114,8 @@ class Slide extends React.Component<SlideProps, object> {
     if (this.props.slide.transition) {
       ret.push(`transition-${this.props.slide.transition}-effect`)
     }
+    ret.push(this.props.slideStatus)
     return ret.join(" ")
-  }
-
-  sectionClassName() {
-    return this.props.slideStatus
   }
 
   outerDivStyle(): object {
@@ -155,7 +150,6 @@ class Slide extends React.Component<SlideProps, object> {
           style={this.outerDivStyle()}
         >
           <section
-            className={this.sectionClassName()}
             ref={s => (this.section = s)}
             style={{
               transformOrigin: "0 0",
@@ -178,4 +172,4 @@ class Slide extends React.Component<SlideProps, object> {
   }
 }
 
-export default resizeListener(Slide)
+export default Slide

@@ -5,6 +5,10 @@ import MarkdownParser from "../../logic/markdown-parser"
 import Slide from "../slide/slide"
 import { Status } from "../../models/slide"
 
+import resizeListener from "../hocs/resizeListener"
+
+import "./deckViewer.css"
+
 const DeckViewer = props => {
   const deck = props.deck
   const parser = new MarkdownParser()
@@ -41,7 +45,7 @@ const DeckViewer = props => {
 
   const slides = deck.slides.map((slide, idx) => <Slide slide={slide} parser={parser} slideStatus={getStatus(idx)} />)
 
-  return <React.Fragment>{slides}</React.Fragment>
+  return <div className="deckViewer">{slides}</div>
 }
 
-export default DeckViewer
+export default resizeListener(DeckViewer)
