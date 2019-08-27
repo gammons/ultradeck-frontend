@@ -68,13 +68,6 @@ class Slide extends React.Component<SlideProps, object> {
   themeCss(): string {
     const ret = []
     ret.push(this.props.slide.themeClass)
-    ret.push(this.hash)
-
-    return ret.join(" ")
-  }
-
-  colorCss(): string {
-    const ret = []
     ret.push(this.props.slide.colorClass)
     ret.push(this.hash)
 
@@ -116,9 +109,7 @@ class Slide extends React.Component<SlideProps, object> {
         ref={r => (this.slideHolder = r)}
       >
         <style type="text/css">{this.customCSS()}</style>
-        <div
-          className={`${this.themeCss()} ${this.colorCss()}`}
-        >
+        <div className={this.themeCss()} >
           <section
             ref={s => (this.section = s)}
             style={{
