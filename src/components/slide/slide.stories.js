@@ -370,3 +370,26 @@ storiesOf("Slides/Markdown/Splitting", module)
       />
     </div>
   ))
+
+storiesOf("Slides/Click handler", module)
+  .addDecorator(withKnobs)
+  .add("Click handler", () => (
+    <div style={{ width: "100%" }}>
+      <Slide
+        slideStatus={Status.Current}
+        slide={createSlide("# Click me")}
+        parser={parser}
+        onClick={() => alert("clicked")}
+      />
+    </div>
+  ))
+  .add("Click handler with a link", () => (
+    <div style={{ width: "100%" }}>
+      <Slide
+        slideStatus={Status.Current}
+        slide={createSlide("# [google](https://google.com)")}
+        parser={parser}
+        onClick={() => alert("clicked")}
+      />
+    </div>
+  ))

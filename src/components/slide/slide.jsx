@@ -64,11 +64,17 @@ class Slide extends React.Component<SlideProps, object> {
     }
   }
 
-  themeCss(): string {
-    const ret = []
+  classNames(): string {
+    const ret = ["slide-outer"]
+
+    ret.push(this.hash)
     ret.push(this.props.slide.themeClass)
     ret.push(this.props.slide.colorClass)
-    ret.push(this.hash)
+    ret.push(this.props.slideStatus)
+
+    if (this.props.slide.transition) {
+      ret.push(`transition-${this.props.slide.transition}-effect`)
+    }
 
     return ret.join(" ")
   }
@@ -83,15 +89,6 @@ class Slide extends React.Component<SlideProps, object> {
     return ret.join(" ")
   }
 
-  outerClassName() {
-    const ret = ["slide-outer"]
-    if (this.props.slide.transition) {
-      ret.push(`transition-${this.props.slide.transition}-effect`)
-    }
-    ret.push(this.props.slideStatus)
-    return ret.join(" ")
-  }
-
   customCSS() {
     return processCSS(this.props.slide.customCss, this.hash)
   }
@@ -102,9 +99,9 @@ class Slide extends React.Component<SlideProps, object> {
     })
 
     return (
-      <div onClick={this.onClick} className={this.outerClassName()} >
+      <React.Fragment>
         <style type="text/css">{this.customCSS()}</style>
-        <div className={this.themeCss()} >
+        <div onClick={this.onClick} className={this.classNames()} >
           <section
             ref={s => (this.section = s)}
             style={{
@@ -123,7 +120,7 @@ class Slide extends React.Component<SlideProps, object> {
             </div>
           </section>
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 }
