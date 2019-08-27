@@ -101,7 +101,7 @@ class Slide extends React.Component<SlideProps, object> {
     return (
       <React.Fragment>
         <style type="text/css">{this.customCSS()}</style>
-        <div onClick={this.onClick} className={this.classNames()} >
+        <div onClick={this.onClick} className={this.classNames()}>
           <section
             ref={s => (this.section = s)}
             style={{
