@@ -26,7 +26,6 @@ export type SlideProps = {
 class Slide extends React.Component<SlideProps, object> {
   hash: string
   section: HTMLElement | null
-  slideHolder: HTMLElement | null
 
   constructor(props: SlideProps) {
     super(props)
@@ -103,11 +102,7 @@ class Slide extends React.Component<SlideProps, object> {
     })
 
     return (
-      <div
-        onClick={this.onClick}
-        className={this.outerClassName()}
-        ref={r => (this.slideHolder = r)}
-      >
+      <div onClick={this.onClick} className={this.outerClassName()} >
         <style type="text/css">{this.customCSS()}</style>
         <div className={this.themeCss()} >
           <section
