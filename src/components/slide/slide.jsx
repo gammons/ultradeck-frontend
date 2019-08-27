@@ -19,7 +19,7 @@ export type SlideProps = {
   showPresenterNotes: ?boolean,
   width: ?number,
   widthPadding: ?number,
-  zoom: ?number,
+  scale: ?number,
   onClick(ev: React.MouseEvent): ?void
 }
 
@@ -53,26 +53,8 @@ class Slide extends React.Component<SlideProps, object> {
     }
   }
 
-  getScale() {
-    return `scale(${this.getZoom()}, ${this.getZoom()})`
-  }
-
-  getWidth() {
-    if (this.props.width) {
-      return this.props.width
-    }
-    if (!this.slideHolder) {
-      return null
-    }
-    const parentNode = this.slideHolder.parentNode
-    return parentNode.offsetWidth
-  }
-
   getZoom() {
-    if (this.props.zoom) {
-      return this.props.zoom
-    }
-    return this.getWidth() / constants.SLIDE_WIDTH
+    return `scale(${this.props.zoom}, ${this.props.zoom})`
   }
 
   slideHtml() {
@@ -118,17 +100,6 @@ class Slide extends React.Component<SlideProps, object> {
     return ret.join(" ")
   }
 
-  outerDivStyle(): object {
-    if (this.props.slideStatus === Status.Current) {
-      return {
-        height: constants.SLIDE_HEIGHT * this.getZoom(),
-        width: constants.SLIDE_WIDTH * this.getZoom()
-      }
-    } else {
-      return {}
-    }
-  }
-
   customCSS() {
     return processCSS(this.props.slide.customCss, this.hash)
   }
@@ -147,13 +118,12 @@ class Slide extends React.Component<SlideProps, object> {
         <style type="text/css">{this.customCSS()}</style>
         <div
           className={`${this.themeCss()} ${this.colorCss()}`}
-          style={this.outerDivStyle()}
         >
           <section
             ref={s => (this.section = s)}
             style={{
               transformOrigin: "0 0",
-              transform: this.getScale(),
+              transform: this.getZoom(),
               width: constants.SLIDE_WIDTH,
               height: constants.SLIDE_HEIGHT
             }}

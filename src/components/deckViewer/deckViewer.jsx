@@ -43,7 +43,7 @@ const DeckViewer = props => {
     }
   })
 
-  const slides = deck.slides.map((slide, idx) => <Slide slide={slide} parser={parser} slideStatus={getStatus(idx)} />)
+  const slides = deck.slides.map((slide, idx) => <Slide {...props} slide={slide} parser={parser} slideStatus={getStatus(idx)} />)
 
   return <div className="deckViewer">{slides}</div>
 }
