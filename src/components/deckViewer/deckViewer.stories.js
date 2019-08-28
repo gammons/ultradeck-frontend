@@ -21,7 +21,7 @@ const createDeck = (effect: string): DeckModel => {
     slides: [
       createSlide("# Slide 0", effect),
       createSlide("# Slide 1", effect),
-      createSlide("Slide 2")
+      createSlide("Slide 2", effect)
     ]
   })
 }

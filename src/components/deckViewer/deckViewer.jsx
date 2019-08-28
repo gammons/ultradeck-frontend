@@ -15,12 +15,13 @@ const DeckViewer = props => {
   const [currentSlideIdx, setCurrentSlideIdx] = useState(0)
 
   const getStatus = idx => {
-    if (idx > currentSlideIdx) {
-      return Status.Future
+    if (idx + 1 === currentSlideIdx) {
+      return Status.Past
     } else if (idx === currentSlideIdx) {
       return Status.Current
+    } else if (idx - 1 === currentSlideIdx) {
+      return Status.Future
     }
-    return Status.Past
   }
 
   const onKeydown = event => {
