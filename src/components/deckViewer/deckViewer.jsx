@@ -25,12 +25,12 @@ const DeckViewer = props => {
 
   const onKeydown = event => {
     event.preventDefault()
-    if ((event.code === 'ArrowRight') || (event.code === 'ArrowDown')) {
+    if (event.code === "ArrowRight" || event.code === "ArrowDown") {
       if (currentSlideIdx < deck.slides.length - 1) {
         setCurrentSlideIdx(currentSlideIdx + 1)
       }
     }
-    if ((event.code === 'ArrowLeft') || (event.code === 'ArrowUp')) {
+    if (event.code === "ArrowLeft" || event.code === "ArrowUp") {
       if (currentSlideIdx > 0) setCurrentSlideIdx(currentSlideIdx - 1)
     }
   }
@@ -43,9 +43,29 @@ const DeckViewer = props => {
     }
   })
 
-  const slides = deck.slides.map((slide, idx) => <Slide {...props} slide={slide} parser={parser} slideStatus={getStatus(idx)} />)
+  const getZoom = () => {
+    return `scale(${props.zoom}, ${props.zoom})`
+  }
 
-  return <div className="deckViewer">{slides}</div>
+  const slides = deck.slides.map((slide, idx) => {
+    const className = [getStatus(idx), slide.transition].filter(n => n)
+
+    return (
+      <li className={className.join(" ")}>
+        <Slide slide={slide} parser={parser} slideStatus={getStatus(idx)} />
+      </li>
+    )
+  })
+
+  return (
+    <div className="deckViewer">
+      <div className="mask">
+        <ul style={{ transformOrigin: "0 0", transform: getZoom() }}>
+          {slides}
+        </ul>
+      </div>
+    </div>
+  )
 }
 
 export default resizeListener(DeckViewer)

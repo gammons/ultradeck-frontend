@@ -1,7 +1,46 @@
 .deckViewer {
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: row;
   overflow: hidden;
+  width: 100%;
+}
+
+.deckViewer ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: calc(100vh);
+}
+
+.deckViewer li {
+  width: 720px;
+  height: 450px;
+  position: absolute;
+  list-style: none;
+  transform-style: preserve-3d;
+}
+
+.deckViewer li.slide-effect {
+  transition: all 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+.deckViewer li.future {
+  left: 720px;
+}
+
+.deckViewer li.current {
+  left: 0;
+}
+
+.deckViewer li.past {
+  left: -720px;
+}
+
+@keyframes moveToCenter {
+  from {
+    transform: translateX(720px);
+  }
+  to {
+    transform: translateX(0);
+  }
 }

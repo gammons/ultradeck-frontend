@@ -6,26 +6,31 @@ import DeckViewer from "./deckViewer"
 import DeckModel from "../../models/deck"
 import SlideModel from "../../models/slide"
 
-const createSlide = (markdown: string): SlideModel => {
+const createSlide = (markdown: string, effect: string): SlideModel => {
   const slide = new SlideModel()
   slide.markdown = markdown
   slide.themeClass = "theme-1"
-  slide.transition = "slide"
+  slide.transition = effect
   slide.colorClass = "color-1"
   return slide
 }
 
-const deck = new DeckModel({
-  name: "Test deck",
-  slides: [
-    createSlide("# Slide 0"),
-    createSlide("# Slide 1"),
-    createSlide("Slide 2")
-  ]
-})
+const createDeck = (effect: string): DeckModel => {
+  return new DeckModel({
+    name: "Test deck",
+    slides: [
+      createSlide("# Slide 0", effect),
+      createSlide("# Slide 1", effect),
+      createSlide("Slide 2")
+    ]
+  })
+}
 
 storiesOf("DeckViewer", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
   .add("simple", () => {
-    return <DeckViewer deck={deck} currentSlideIdx={0} />
+    return <DeckViewer deck={createDeck()} currentSlideIdx={0} />
+  })
+  .add("slide effect", () => {
+    return <DeckViewer deck={createDeck("slide-effect")} currentSlideIdx={0} />
   })

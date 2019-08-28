@@ -52,10 +52,6 @@ class Slide extends React.Component<SlideProps, object> {
     }
   }
 
-  getZoom() {
-    return `scale(${this.props.zoom}, ${this.props.zoom})`
-  }
-
   slideHtml() {
     if (this.props.showPresenterNotes) {
       return this.props.parser.parse(this.props.slide.presenterNotes || "", "")
@@ -100,13 +96,11 @@ class Slide extends React.Component<SlideProps, object> {
 
     return (
       <React.Fragment>
-        <style type="text/css">{this.customCSS()}</style>
         <div onClick={this.onClick} className={this.classNames()}>
+          <style type="text/css">{this.customCSS()}</style>
           <section
             ref={s => (this.section = s)}
             style={{
-              transformOrigin: "0 0",
-              transform: this.getZoom(),
               width: constants.SLIDE_WIDTH,
               height: constants.SLIDE_HEIGHT
             }}
