@@ -68,10 +68,6 @@ class Slide extends React.Component<SlideProps, object> {
     ret.push(this.props.slide.colorClass)
     ret.push(this.props.slideStatus)
 
-    if (this.props.slide.transition) {
-      ret.push(`transition-${this.props.slide.transition}-effect`)
-    }
-
     return ret.join(" ")
   }
 
@@ -95,26 +91,24 @@ class Slide extends React.Component<SlideProps, object> {
     })
 
     return (
-      <React.Fragment>
-        <div onClick={this.onClick} className={this.classNames()}>
-          <style type="text/css">{this.customCSS()}</style>
-          <section
-            ref={s => (this.section = s)}
-            style={{
-              width: constants.SLIDE_WIDTH,
-              height: constants.SLIDE_HEIGHT
-            }}
-          >
-            <div className={this.frameClassName()}>
+      <div onClick={this.onClick} className={this.classNames()}>
+        <style type="text/css">{this.customCSS()}</style>
+        <section
+          ref={s => (this.section = s)}
+          style={{
+            width: constants.SLIDE_WIDTH,
+            height: constants.SLIDE_HEIGHT
+          }}
+        >
+          <div className={this.frameClassName()}>
+            <div>
               <div>
-                <div>
-                  <div dangerouslySetInnerHTML={createMarkup()} />
-                </div>
+                <div dangerouslySetInnerHTML={createMarkup()} />
               </div>
             </div>
-          </section>
-        </div>
-      </React.Fragment>
+          </div>
+        </section>
+      </div>
     )
   }
 }
