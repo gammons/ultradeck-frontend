@@ -60,11 +60,7 @@ const DeckViewer = props => {
 
   return (
     <div className="deckViewer">
-      <div className="mask">
-        <ul style={{ transformOrigin: "0 0", transform: getZoom() }}>
-          {slides}
-        </ul>
-      </div>
+      <ul style={{ transformOrigin: "0 0", transform: getZoom() }}>{slides}</ul>
     </div>
   )
 }
