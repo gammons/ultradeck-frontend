@@ -29,8 +29,11 @@ const createDeck = (effect: string): DeckModel => {
 storiesOf("DeckViewer", module)
   .addDecorator(s => <div style={{ width: "100%" }}>{s()}</div>)
   .add("simple", () => {
-    return <DeckViewer deck={createDeck()} currentSlideIdx={0} />
+    return <DeckViewer deck={createDeck()} />
   })
   .add("slide effect", () => {
-    return <DeckViewer deck={createDeck("slide-effect")} currentSlideIdx={0} />
+    return <DeckViewer deck={createDeck("slide-effect")} />
+  })
+  .add("Fade effect", () => {
+    return <DeckViewer deck={createDeck("fade-effect")} />
   })
