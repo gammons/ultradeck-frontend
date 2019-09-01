@@ -1,3 +1,4 @@
+// @flow strict
 export const SLIDE_WIDTH = 720
 export const SLIDE_HEIGHT = 450
 

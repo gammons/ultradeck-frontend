@@ -1,3 +1,4 @@
+// @flow strict
 const style = document.createElement("style")
 const iframe = document.createElement("iframe")
 document.body.appendChild(iframe)

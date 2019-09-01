@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 import utils from "./utils"
 
 type SlideModelProps = {
@@ -9,7 +9,8 @@ type SlideModelProps = {
   colorClass: string,
   markdown?: string,
   customCss?: string,
-  presenterNotes?: string,
+  layoutClass?: string,
+  presenterNotes?: string
 }
 
 export const Status = {
@@ -20,54 +21,29 @@ export const Status = {
 
 const defaultArgs = {
   themeClass: "theme-1",
-  colorClass: "color-1"
+  colorClass: "color-1",
+  customCss: "",
+  presenterNotes: ""
 }
 
 export default class SlideModel {
-  uuid: string
+  uuid: string | null
   markdown: ?string
   layoutClass: ?string
-  custom_css: string | null
-  presenter_notes: string | null
+  customCss: ?string
+  presenterNotes: ?string
   themeClass: string
   colorClass: string
   transition: ?string
 
   constructor(args: SlideModelProps = defaultArgs) {
-    this.uuid = args.uuid || utils.generateUuid()
+    this.uuid = args.uuid === undefined ? utils.generateUuid() : args.uuid
     this.themeClass = args.themeClass
     this.colorClass = args.colorClass
     this.markdown = args.markdown
-    this.layoutClass = args.layoutClass
+    if (args.layoutClass !== undefined) this.layoutClass = args.layoutClass
     this.customCss = args.customCss
     this.presenterNotes = args.presenterNotes
     this.transition = args.transition
-  }
-
-  clone() {
-    return new SlideModel({
-      uuid: utils.generateUuid(),
-      colorClass: this.colorClass,
-      layoutClass: this.layoutClass,
-      themeClass: this.themeClass,
-      markdown: this.markdown,
-      customCss: this.customCss,
-      presenterNotes: this.presenterNotes,
-      transition: this.transition,
-    })
-  }
-
-  formatForBackend() {
-    return {
-      id: this.id,
-      uuid: this.uuid,
-      themeClass: this.themeClass,
-      colorClass: this.colorClass,
-      layoutClass: this.layoutClass,
-      markdown: this.markdown,
-      customCss: this.customCss,
-      presenterNotes: this.presenterNotes,
-      transition: this.transition
-    }
   }
 }

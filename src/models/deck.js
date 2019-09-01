@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 import utils from "./utils"
 import SlideModel from "./slide"
@@ -15,7 +15,7 @@ export default class Deck {
   slides: SlideModel[]
 
   constructor(args: DeckModelProps) {
-    this.uuid = args.uuid || utils.generateUuid()
+    this.uuid = args.uuid === undefined ? utils.generateUuid() : args.uuid
     this.name = args.name || "New deck"
     this.slides = args.slides
   }

@@ -1,6 +1,7 @@
+// @flow strict
 import * as constants from "../constants"
 
-const fitHeaders = frame => {
+const fitHeaders = (frame: HTMLElement) => {
   const elements = [
     "h1:not(.fit)",
     "h2:not(.fit)",

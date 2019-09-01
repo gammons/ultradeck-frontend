@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 type ClickEvent = {
   pageX: number,
   pageY: number
@@ -33,19 +33,6 @@ const utils = {
         ) || [null, ""])[1].replace(/\+/g, "%20")
       ) || null
     )
-  },
-  calculatePercent: (el: HTMLElement, ev: ClickEvent) => {
-    let parentNode = el.offsetParent
-    let left = el.offsetLeft
-
-    while (parentNode !== null) {
-      if (parentNode.offsetLeft) {
-        left += parentNode.offsetLeft
-      }
-      parentNode = parentNode.parentNode
-    }
-    const x = ev.pageX - left
-    return x / el.offsetWidth
   },
   camelToSpace: (name: string) => {
     return name.replace(/([A-Z])/g, " $1").replace(/^./, function(str: string) {

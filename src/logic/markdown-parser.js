@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 import * as Markdown from "markdown-it"
 //import * as KatexPlugin from "markown-it-katex"
 import * as mila from "markdown-it-link-attributes"
@@ -12,7 +12,7 @@ import ChartPlugin from "./md-parser-plugins/md-chart-plugin"
 import PanelsPlugin from "./md-parser-plugins/md-panels-plugin"
 
 export default class MarkdownParser {
-  md: MarkdownIt
+  md: Markdown.MarkdownIt
 
   constructor() {
     this.md = new Markdown({ html: true })

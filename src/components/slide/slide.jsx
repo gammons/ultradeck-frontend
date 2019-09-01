@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 import * as React from "react"
 
 import fitHeaders from "../../logic/fit-header"
@@ -15,15 +15,12 @@ import "./slide.css"
 export type SlideProps = {
   slide: SlideModel,
   parser: MarkdownParser,
-  slideStatus?: Status,
-  showPresenterNotes: ?boolean,
-  width: ?number,
-  widthPadding: ?number,
-  scale: ?number,
-  onClick(ev: React.MouseEvent): ?void
+  slideStatus?: $Values<typeof Status>,
+  showPresenterNotes?: ?boolean,
+  onClick?: (ev: Event) => void
 }
 
-class Slide extends React.Component<SlideProps, object> {
+class Slide extends React.Component<SlideProps> {
   hash: string
   section: HTMLElement | null
 
@@ -46,7 +43,8 @@ class Slide extends React.Component<SlideProps, object> {
     fitHeaders(this.section)
   }
 
-  onClick(ev: React.MouseEvent<HTMLDivElement>) {
+  /*:: onClick: () => void */
+  onClick(ev: Event) {
     if (this.props.onClick) {
       this.props.onClick(ev)
     }
@@ -73,7 +71,11 @@ class Slide extends React.Component<SlideProps, object> {
 
   frameClassName() {
     const ret = []
-    ret.push(this.props.slide.layoutClass || "frame")
+
+    this.props.slide.layoutClass === undefined
+      ? ret.push("frame")
+      : ret.push(this.props.slide.layoutClass)
+
     if (this.slideHtml().includes("singleHeader")) {
       ret.push("singleElement")
     }
