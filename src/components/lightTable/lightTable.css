@@ -1,0 +1,8 @@
+ul.lightTable {
+  display: flex;
+  flex-direction: row;
+}
+
+ul.lightTable li {
+  width: 100px;
+}
