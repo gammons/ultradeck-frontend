@@ -53,7 +53,7 @@ const DeckViewer = props => {
 
     return (
       <li className={className.join(" ")}>
-        <Slide slide={slide} parser={parser} slideStatus={getStatus(idx)} />
+        <Slide slide={slide} parser={parser} />
       </li>
     )
   })

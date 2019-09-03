@@ -5,7 +5,7 @@ import { withKnobs, select } from "@storybook/addon-knobs"
 
 import MarkdownParser from "../../logic/markdown-parser"
 import Slide from "./slide"
-import SlideModel, { Status } from "../../models/slide"
+import SlideModel from "../../models/slide"
 
 const parser = new MarkdownParser()
 
@@ -65,7 +65,6 @@ storiesOf("Slides", module)
     slide.presenterNotes = `* here are\n* some of my notes`
     return (
       <Slide
-        slideStatus={Status.Current}
         showPresenterNotes
         widthPadding={20}
         slide={slide}
@@ -80,12 +79,12 @@ storiesOf("Slides/Layouts", module)
   .add("PictureFrame", () => {
     const slide = createSlide("# Here is the title\n## Here is the subtitle")
     slide.layoutClass = "layout-picture-frame"
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("CircleTitle", () => {
     const slide = createSlide("# Here is the title\n## Here is the subtitle")
     slide.layoutClass = "layout-circle-title"
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Headers", module)
@@ -93,35 +92,35 @@ storiesOf("Slides/Markdown/Headers", module)
   .addDecorator(withKnobs)
   .add("single h1 - autofit", () => {
     const slide = createSlide("# Heading 1")
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("single h1 - autofit - multiple lines", () => {
     const slide = createSlide("# Heading 1\n# Heading 1 another\n# Heading 1")
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("single h1 - long text", () => {
     const slide = createSlide("# this is a heading with a really long title")
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("single h1 with other elements", () => {
     const slide = createSlide("# Heading 1\n\nThis is some regular text")
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("single h2", () => {
     const slide = createSlide("## Heading 2")
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("all headers", () => {
     const slide = createSlide(
       "# Heading 1\n## Heading 2\n### Heading 3\n#### Heading 4"
     )
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("bold / italic headers", () => {
     const slide = createSlide(
       "## This has **Bold** and *italics*, and ~~strikethrough~~"
     )
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Lists", module)
@@ -129,7 +128,7 @@ storiesOf("Slides/Markdown/Lists", module)
   .addDecorator(withKnobs)
   .add("Regular list", () => {
     const slide = createSlide("* item 1\n* item 2\n* item 3")
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Bold + Emphasis", module)
@@ -139,13 +138,13 @@ storiesOf("Slides/Markdown/Bold + Emphasis", module)
     const slide = createSlide(
       "# header with **Bold**\nand regular content with **bold**"
     )
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("Emphasis", () => {
     const slide = createSlide(
       "# header with *Emphasis*\nand regular content with *emphasis*"
     )
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Links", module)
@@ -155,7 +154,7 @@ storiesOf("Slides/Markdown/Links", module)
     const slide = createSlide(
       "[here is a link](https://google.com) - links should have pointer cursor when hover, and open in new tab"
     )
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Background Images", module)
@@ -166,27 +165,27 @@ storiesOf("Slides/Markdown/Background Images", module)
 ![](http://localhost:9009/white.jpg)
 # Background image
     `)
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("Filtered background image", () => {
     const slide = createSlide(`
 ![filter](http://localhost:9009/porsche.jpg)
 # Background image
     `)
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("Inline image - maxed out", () => {
     const slide = createSlide(`
 ![inline](http://localhost:9009/porsche.jpg)
     `)
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("Kenburns background image", () => {
     const slide = createSlide(`
 ![kenburns filter](http://localhost:9009/porsche.jpg)
 # Background image
     `)
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Markdown/Code snippets", module)
@@ -199,15 +198,15 @@ storiesOf("Slides/Markdown/Code snippets", module)
 ${js}
 \`\`\`
     `)
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("Inline snippet - body", () => {
     const slide = createSlide(`here is a \`code\` snippet`)
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
   .add("Inline snippet - header", () => {
     const slide = createSlide(`# here is a \`code\` snippet`)
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
 
 const tableSlideModel = createSlide(`
@@ -223,11 +222,7 @@ tables!
 storiesOf("Slides/Markdown/Tables", module).add("table support", () => (
   <div style={{ width: "100%" }}>
     <h1>Selected</h1>
-    <Slide
-      slideStatus={Status.Current}
-      slide={tableSlideModel}
-      parser={parser}
-    />
+    <Slide slide={tableSlideModel} parser={parser} />
   </div>
 ))
 
@@ -237,7 +232,7 @@ storiesOf("Slides/Markdown/Custom CSS", module)
   .add("using custom CSS on elements", () => {
     const slide = createSlide("# blue stuff")
     slide.customCss = "h1 { color: blue; transform: rotate(-7deg); }"
-    return <Slide slideStatus={Status.Current} slide={slide} parser={parser} />
+    return <Slide slide={slide} parser={parser} />
   })
 
 const textSplitSlideModel = createSlide(`
@@ -309,65 +304,37 @@ storiesOf("Slides/Markdown/Splitting", module)
   .addDecorator(withKnobs)
   .add("text split", () => (
     <div style={{ width: "100%" }}>
-      <Slide
-        slideStatus={Status.Current}
-        slide={textSplitSlideModel}
-        parser={parser}
-      />
+      <Slide slide={textSplitSlideModel} parser={parser} />
     </div>
   ))
   .add("image split left", () => (
     <div style={{ width: "100%" }}>
-      <Slide
-        slideStatus={Status.Current}
-        slide={imageLeftSplitModel}
-        parser={parser}
-      />
+      <Slide slide={imageLeftSplitModel} parser={parser} />
     </div>
   ))
   .add("image split right", () => (
     <div style={{ width: "100%" }}>
-      <Slide
-        slideStatus={Status.Current}
-        slide={imageRightSplitModel}
-        parser={parser}
-      />
+      <Slide slide={imageRightSplitModel} parser={parser} />
     </div>
   ))
   .add("inline image split left", () => (
     <div style={{ width: "100%" }}>
-      <Slide
-        slideStatus={Status.Current}
-        slide={inlineImageLeftSplitModel}
-        parser={parser}
-      />
+      <Slide slide={inlineImageLeftSplitModel} parser={parser} />
     </div>
   ))
   .add("inline image split right", () => (
     <div style={{ width: "100%" }}>
-      <Slide
-        slideStatus={Status.Current}
-        slide={inlineImageRightSplitModel}
-        parser={parser}
-      />
+      <Slide slide={inlineImageRightSplitModel} parser={parser} />
     </div>
   ))
   .add("code sample split left", () => (
     <div style={{ width: "100%" }}>
-      <Slide
-        slideStatus={Status.Current}
-        slide={codeLeftSplitModel}
-        parser={parser}
-      />
+      <Slide slide={codeLeftSplitModel} parser={parser} />
     </div>
   ))
   .add("code sample split right", () => (
     <div style={{ width: "100%" }}>
-      <Slide
-        slideStatus={Status.Current}
-        slide={codeRightSplitModel}
-        parser={parser}
-      />
+      <Slide slide={codeRightSplitModel} parser={parser} />
     </div>
   ))
 
@@ -376,7 +343,6 @@ storiesOf("Slides/Click handler", module)
   .add("Click handler", () => (
     <div style={{ width: "100%" }}>
       <Slide
-        slideStatus={Status.Current}
         slide={createSlide("# Click me")}
         parser={parser}
         onClick={() => alert("clicked")}
@@ -386,7 +352,6 @@ storiesOf("Slides/Click handler", module)
   .add("Click handler with a link", () => (
     <div style={{ width: "100%" }}>
       <Slide
-        slideStatus={Status.Current}
         slide={createSlide("# [google](https://google.com)")}
         parser={parser}
         onClick={() => alert("clicked")}

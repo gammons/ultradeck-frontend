@@ -5,7 +5,7 @@ import fitHeaders from "../../logic/fit-header"
 import processCSS from "../../logic/prefixed-custom-css"
 import * as constants from "../../constants"
 
-import SlideModel, { Status } from "../../models/slide"
+import SlideModel from "../../models/slide"
 import MarkdownParser from "../../logic/markdown-parser"
 
 import utils from "../../models/utils"
@@ -15,7 +15,6 @@ import "./slide.css"
 export type SlideProps = {
   slide: SlideModel,
   parser: MarkdownParser,
-  slideStatus?: $Values<typeof Status>,
   showPresenterNotes?: ?boolean,
   onClick?: (ev: Event) => void
 }
@@ -64,7 +63,6 @@ class Slide extends React.Component<SlideProps> {
     ret.push(this.hash)
     ret.push(this.props.slide.themeClass)
     ret.push(this.props.slide.colorClass)
-    ret.push(this.props.slideStatus)
 
     return ret.join(" ")
   }

@@ -1,8 +1,10 @@
 ul.lightTable {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 ul.lightTable li {
   width: 100px;
+  padding: 15px;
 }

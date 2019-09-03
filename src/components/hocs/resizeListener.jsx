@@ -33,12 +33,11 @@ const resizeListener = WrappedComponent => props => {
     }
   })
 
-  let finalWidth = width
-  if (props.widthPadding) {
-    finalWidth = width - props.widthPadding
-  }
-
-  return <div ref={r => setHolder(r)}><WrappedComponent {...props} zoom={calculateZoom()} width={finalWidth}/></div>
+  return (
+    <div ref={r => setHolder(r)}>
+      <WrappedComponent {...props} zoom={calculateZoom()} />
+    </div>
+  )
 }
 
 export default resizeListener

@@ -4,19 +4,41 @@ import MarkdownParser from "../../logic/markdown-parser"
 import Slide from "../slide/slide"
 import SlideModel, { Status } from "../../models/slide"
 import DeckModel from "../../models/deck"
+import * as constants from "../../constants"
 
 import "./lightTable.css"
 
 type LightTableProps = {
-  deck: DeckModel
+  deck: DeckModel,
+  zoom?: number
 }
 
 const LightTable = (props: LightTableProps) => {
   const deck = props.deck
+  const scale = 0.3
   const parser = new MarkdownParser()
+
+  const getZoom = () => {
+    return `scale(${scale}, ${scale})`
+  }
+
   const slides = deck.slides.map(slide => (
-    <li>
-      <Slide slide={slide} parser={parser} slideStatus={Status.Current} />
+    <li
+      style={{
+        width: constants.SLIDE_WIDTH * scale,
+        height: constants.SLIDE_HEIGHT * scale
+      }}
+    >
+      <div
+        style={{
+          width: constants.SLIDE_WIDTH,
+          height: constants.SLIDE_HEIGHT,
+          transformOrigin: "0 0",
+          transform: getZoom()
+        }}
+      >
+        <Slide slide={slide} parser={parser} />
+      </div>
     </li>
   ))
 
