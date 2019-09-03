@@ -34,6 +34,7 @@ const themes = [
 const createSlide = (markdown: string): SlideModel => {
   const slide = new SlideModel()
   slide.markdown = markdown
+  slide.parsedHTML = parser.parse(markdown)
   slide.themeClass = select("Theme", themes, "theme-1")
   slide.colorClass = select("Color", colors, "color-1")
   return slide
@@ -63,14 +64,8 @@ storiesOf("Slides", module)
   .add("presenter notes", () => {
     const slide = createSlide("# cool slide")
     slide.presenterNotes = `* here are\n* some of my notes`
-    return (
-      <Slide
-        showPresenterNotes
-        widthPadding={20}
-        slide={slide}
-        parser={parser}
-      />
-    )
+    slide.presenterNotesHTML = parser.parse(slide.presenterNotes)
+    return <Slide showPresenterNotes slide={slide} parser={parser} />
   })
 
 storiesOf("Slides/Layouts", module)

@@ -1,7 +1,6 @@
 // @flow
 import React, { useEffect, useState } from "react"
 
-import MarkdownParser from "../../logic/markdown-parser"
 import Slide from "../slide/slide"
 import { Status } from "../../models/slide"
 
@@ -11,7 +10,6 @@ import "./deckViewer.css"
 
 const DeckViewer = props => {
   const deck = props.deck
-  const parser = new MarkdownParser()
   const [currentSlideIdx, setCurrentSlideIdx] = useState(0)
 
   const getStatus = idx => {
@@ -53,7 +51,7 @@ const DeckViewer = props => {
 
     return (
       <li className={className.join(" ")}>
-        <Slide slide={slide} parser={parser} />
+        <Slide slide={slide} />
       </li>
     )
   })

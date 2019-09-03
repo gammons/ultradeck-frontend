@@ -8,9 +8,11 @@ type SlideModelProps = {
   themeClass: string,
   colorClass: string,
   markdown?: string,
+  parsedHTML?: string,
   customCss?: string,
   layoutClass?: string,
-  presenterNotes?: string
+  presenterNotes?: string,
+  presenterNotesHTML?: string
 }
 
 export const Status = {
@@ -29,9 +31,11 @@ const defaultArgs = {
 export default class SlideModel {
   uuid: string | null
   markdown: ?string
+  parsedHTML: ?string
   layoutClass: ?string
   customCss: ?string
   presenterNotes: ?string
+  presenterNotesHTML: ?string
   themeClass: string
   colorClass: string
   transition: ?string
@@ -41,9 +45,11 @@ export default class SlideModel {
     this.themeClass = args.themeClass
     this.colorClass = args.colorClass
     this.markdown = args.markdown
+    this.parsedHTML = args.parsedHTML
     if (args.layoutClass !== undefined) this.layoutClass = args.layoutClass
     this.customCss = args.customCss
     this.presenterNotes = args.presenterNotes
+    this.presenterNotesHTML = args.presenterNotesHTML
     this.transition = args.transition
   }
 }

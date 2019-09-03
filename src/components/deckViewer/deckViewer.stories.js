@@ -5,10 +5,14 @@ import { storiesOf } from "@storybook/react"
 import DeckViewer from "./deckViewer"
 import DeckModel from "../../models/deck"
 import SlideModel from "../../models/slide"
+import MarkdownParser from "../../logic/markdown-parser"
+
+const parser = new MarkdownParser()
 
 const createSlide = (markdown: string, effect: string): SlideModel => {
   const slide = new SlideModel()
   slide.markdown = markdown
+  slide.parsedHTML = parser.parse(markdown)
   slide.themeClass = "theme-1"
   slide.transition = effect
   slide.colorClass = "color-1"

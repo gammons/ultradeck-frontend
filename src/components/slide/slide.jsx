@@ -6,7 +6,6 @@ import processCSS from "../../logic/prefixed-custom-css"
 import * as constants from "../../constants"
 
 import SlideModel from "../../models/slide"
-import MarkdownParser from "../../logic/markdown-parser"
 
 import utils from "../../models/utils"
 
@@ -14,7 +13,6 @@ import "./slide.css"
 
 export type SlideProps = {
   slide: SlideModel,
-  parser: MarkdownParser,
   showPresenterNotes?: ?boolean,
   onClick?: (ev: Event) => void
 }
@@ -51,9 +49,9 @@ class Slide extends React.Component<SlideProps> {
 
   slideHtml() {
     if (this.props.showPresenterNotes) {
-      return this.props.parser.parse(this.props.slide.presenterNotes || "", "")
+      return this.props.slide.presenterNotesHTML || ""
     } else {
-      return this.props.parser.parse(this.props.slide.markdown, "")
+      return this.props.slide.parsedHTML || ""
     }
   }
 
