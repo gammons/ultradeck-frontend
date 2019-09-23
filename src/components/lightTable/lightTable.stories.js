@@ -5,10 +5,14 @@ import { storiesOf } from "@storybook/react"
 import LightTable from "./lightTable"
 import DeckModel from "../../models/deck"
 import SlideModel from "../../models/slide"
+import MarkdownParser from "../../logic/markdown-parser"
+
+const parser = new MarkdownParser()
 
 const createSlide = (markdown: string): SlideModel => {
   const slide = new SlideModel()
   slide.markdown = markdown
+  slide.parsedHTML = parser.parse(markdown)
   slide.themeClass = "theme-1"
   slide.colorClass = "color-1"
   return slide

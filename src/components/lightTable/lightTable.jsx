@@ -1,6 +1,5 @@
 // @flow strict
 import React from "react"
-import MarkdownParser from "../../logic/markdown-parser"
 import Slide from "../slide/slide"
 import SlideModel, { Status } from "../../models/slide"
 import DeckModel from "../../models/deck"
@@ -16,7 +15,6 @@ type LightTableProps = {
 const LightTable = (props: LightTableProps) => {
   const deck = props.deck
   const scale = 0.3
-  const parser = new MarkdownParser()
 
   const getZoom = () => {
     return `scale(${scale}, ${scale})`
@@ -37,7 +35,7 @@ const LightTable = (props: LightTableProps) => {
           transform: getZoom()
         }}
       >
-        <Slide slide={slide} parser={parser} />
+        <Slide slide={slide} />
       </div>
     </li>
   ))
