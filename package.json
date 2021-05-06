@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "highcharts": "^7.1.2",
+    "highcharts": "^9.0.0",
     "highlight.js": "^9.15.9",
     "markdown-it": "^9.0.1",
     "markdown-it-katex": "^2.0.3",
